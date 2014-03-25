@@ -6,7 +6,8 @@
 import jugglingdb = require('jugglingdb');
 
 export var db = new jugglingdb.Schema('sqlite3', {
-    database: 'ossdb.sqlite3'
+    database: 'ossdb.sqlite3',
+    debug: true
 });
 
 export interface TOss {
@@ -27,27 +28,37 @@ export interface TProject {
     projectId: string;
 }
 
+export interface TPackageUsage {
+
+}
+
 export var Oss: jugglingdb.Model<TOss> = db.define<TOss>('Oss', {
     name: {type: String, index: true},
     projectUrl: String
 });
 
 export var License: jugglingdb.Model<TLicense> = db.define<TLicense>('License', {
-    name: String,
+    name: {type: String, index: true},
     type: String
 });
 
 export var Package: jugglingdb.Model<TPackage> = db.define<TPackage>('Package', {
-    name: String
+    name: {type: String, index: true}
 });
 
 export var Project: jugglingdb.Model<TProject> = db.define<TProject>('Project', {
-    projectId: String
+    projectId: {type: String, index: true}
 });
 
-db.autoupdate();
+export var PackageUsage: jugglingdb.Model<TPackageUsage> = db.define<TPackageUsage>('PackageUsage', {
+});
 
+//db.autoupdate();
+
+//Oss.hasMany(Package, {as: 'packages', foreignKey: 'packageId'});
 Oss.hasMany(Package);
 License.hasMany(Package);
-Package.hasMany(Project);
-Project.hasMany(Package);
+Project.hasMany(PackageUsage, {as: 'packages', foreignKey: 'projectId'});
+Package.hasMany(PackageUsage, {as: 'projects', foreignKey: 'packageId'});
+//PackageUsage.belongsTo(Project);
+//PackageUsage.belongsTo(Package);

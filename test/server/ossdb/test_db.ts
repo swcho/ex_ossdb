@@ -19,6 +19,10 @@ describe('ossdb functions', function() {
     beforeEach((done) => {
 
         var series = [];
+        var newOss;
+        var newLicense;
+        var newPackage;
+        var newProject;
         series.push((cb) => {
             ossdb.db.automigrate(cb);
         });
@@ -27,7 +31,11 @@ describe('ossdb functions', function() {
                 name: "Open SSL",
                 projectUrl: ''
             }, (err, model) => {
-                model.save(cb);
+                model.save((err, model) => {
+                    newOss = model;
+                    console.log(newOss);
+                    cb();
+                });
             });
         });
         series.push((cb) => {
@@ -35,6 +43,7 @@ describe('ossdb functions', function() {
                 name: 'GPL 3.0',
                 type: 'P'
             }, (err, model) => {
+                newLicense = model;
                 model.save(cb);
             });
         });
@@ -42,14 +51,34 @@ describe('ossdb functions', function() {
             ossdb.Package.create({
                 name: 'libopenssl.1.0.so'
             }, (err, model) => {
-                model.save(cb);
+                model.save((err, model) => {
+                    newPackage = model;
+                    console.log(newPackage);
+                    cb();
+                });
             });
         });
         series.push((cb) => {
             ossdb.Project.create({
                 projectId: 'hms1000sph2'
             }, (err, model) => {
+                newProject = model;
                 model.save(cb);
+            });
+        });
+        series.push((cb) => {
+            // newOss.packages.build(newPackage).save(cb); <= this will remove name of newPackage
+            newPackage.updateAttribute('ossId', newOss.id, cb);
+        });
+        series.push((cb) => {
+            newPackage.updateAttribute('licenseId', newLicense.id, cb);
+        });
+        series.push((cb) => {
+            var newUsage = ossdb.PackageUsage.create({});
+            newUsage.updateAttribute('projectId', newProject.id, () => {
+                newUsage.updateAttribute('packageId', newPackage.id, () => {
+                    newUsage.save(cb);
+                });
             });
         });
         series.push((cb) => {

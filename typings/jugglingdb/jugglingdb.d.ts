@@ -208,13 +208,14 @@ declare module 'jugglingdb' {
          *
          *
          */
-        hasMany(model: any);
-        hasMany(modelName: string);
+        hasMany(model: any, options?: any);
+        hasMany(modelName: string, options?: any);
 
         /*
          *
          */
-        belongsTo();
+        belongsTo(model: any, options?: any);
+        belongsTo(modelName: string, options?: any);
 
         /*
          *
