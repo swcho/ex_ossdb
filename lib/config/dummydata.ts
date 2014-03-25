@@ -4,6 +4,7 @@
 import mongoose = require('mongoose');
 import user = require('../models/user');
 import thing = require('../models/thing');
+import ossdb = require('../models/ossdb');
 
 var User = mongoose.model<user.TUser>('User');
 var Thing = mongoose.model<thing.TThing>('Thing');

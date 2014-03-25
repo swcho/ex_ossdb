@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b67e727-2086-4062-86ee-691f83bf8df5" name="Default" comment="- Relation test&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/jugglingdb/jugglingdb.d.ts" afterPath="$PROJECT_DIR$/typings/jugglingdb/jugglingdb.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/models/ossdb.ts" afterPath="$PROJECT_DIR$/lib/models/ossdb.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/server/ossdb/test_db.ts" afterPath="$PROJECT_DIR$/test/server/ossdb/test_db.ts" />
+    <list default="true" id="3b67e727-2086-4062-86ee-691f83bf8df5" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/config/dummydata.ts" afterPath="$PROJECT_DIR$/lib/config/dummydata.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ossdb2.iws" />
@@ -48,10 +46,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_db.ts" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="test_db.ts" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/server/ossdb/test_db.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="110" column="35" selection-start="3346" selection-end="3346" vertical-scroll-proportion="0.6119403" vertical-offset="1143" max-vertical-offset="1612">
+            <state line="92" column="32" selection-start="2867" selection-end="2867" vertical-scroll-proportion="0.0" vertical-offset="1041" max-vertical-offset="1612">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dummydata.ts" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/config/dummydata.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="37" column="13" selection-start="1440" selection-end="1440" vertical-scroll-proportion="0.5125448" vertical-offset="195" max-vertical-offset="806">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server.ts" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="34" selection-start="897" selection-end="897" vertical-scroll-proportion="0.0" vertical-offset="183" max-vertical-offset="741">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -102,7 +122,6 @@
         <option value="$PROJECT_DIR$/typings/passportjs/passport.d.ts" />
         <option value="$PROJECT_DIR$/lib/config/passport.ts" />
         <option value="$PROJECT_DIR$/typings/mongoose/mongoose.d.ts" />
-        <option value="$PROJECT_DIR$/lib/config/dummydata.ts" />
         <option value="$PROJECT_DIR$/app/bower_components/angular/angular.js" />
         <option value="$PROJECT_DIR$/typings/angularjs/angular.d.ts" />
         <option value="$PROJECT_DIR$/typings/superagent/superagent.d.ts" />
@@ -119,6 +138,7 @@
         <option value="$PROJECT_DIR$/typings/jugglingdb/jugglingdb.d.ts" />
         <option value="$PROJECT_DIR$/lib/models/ossdb.ts" />
         <option value="$PROJECT_DIR$/test/server/ossdb/test_db.ts" />
+        <option value="$PROJECT_DIR$/lib/config/dummydata.ts" />
       </list>
     </option>
   </component>
@@ -225,11 +245,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
+              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -243,33 +259,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ossdb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test_db.ts" />
-              <option name="myItemType" value="com.intellij.plugins.watcher.projectView.NestingTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ossdb2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ossdb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -427,7 +421,11 @@
       <created>1395735191374</created>
       <updated>1395735191374</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="- Relation defined and tested&#10;">
+      <created>1395736368074</created>
+      <updated>1395736368074</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -440,11 +438,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32779622" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25330397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31497797" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36501902" sideWeight="0.5003524" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.45293465" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33997786" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -477,7 +475,8 @@
     <MESSAGE value="Try with mongodb but we need sqlite&#10;" />
     <MESSAGE value="- Juggling DB integrated and used for OSSDB management&#10;- Mocha based test applied" />
     <MESSAGE value="- Relation updated for Juggling DB&#10;&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Relation updated for Juggling DB&#10;&#10;" />
+    <MESSAGE value="- Relation defined and tested&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Relation defined and tested&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -781,13 +780,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/server/ossdb/test_db.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="18" selection-start="3174" selection-end="3174" vertical-scroll-proportion="0.5842217" vertical-offset="974" max-vertical-offset="1443">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/models/ossdb.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state line="61" column="35" selection-start="1412" selection-end="1412" vertical-scroll-proportion="0.0" vertical-offset="454" max-vertical-offset="910">
@@ -797,9 +789,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/server/ossdb/test_db.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="11" selection-start="734" selection-end="734" vertical-scroll-proportion="0.5125448" vertical-offset="0" max-vertical-offset="1573">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/server/ossdb/test_db.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="35" selection-start="3346" selection-end="3346" vertical-scroll-proportion="0.6119403" vertical-offset="1143" max-vertical-offset="1612">
+        <state line="92" column="32" selection-start="2867" selection-end="2867" vertical-scroll-proportion="0.0" vertical-offset="1041" max-vertical-offset="1612">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="34" selection-start="897" selection-end="897" vertical-scroll-proportion="0.0" vertical-offset="183" max-vertical-offset="741">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/config/dummydata.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="13" selection-start="1440" selection-end="1440" vertical-scroll-proportion="0.5125448" vertical-offset="195" max-vertical-offset="806">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
