@@ -13,9 +13,10 @@
         <item url="file://$PROJECT_DIR$/node_modules/grunt-ts/tasks/modules/transformers.js" />
         <item url="file://$PROJECT_DIR$/node_modules/grunt-ts/tasks/modules/utils.js" />
         <item url="file://$PROJECT_DIR$/lib/config/express.js" />
-        <item url="file://$PROJECT_DIR$/lib/config/passport.js" />
         <item url="file://$PROJECT_DIR$/node_modules/grunt-ts/tasks/modules/templateCache.js" />
+        <item url="file://$PROJECT_DIR$/lib/config/passport.js" />
         <item url="file://$PROJECT_DIR$/lib/controllers/api.js" />
+        <item url="file://$PROJECT_DIR$/test/server/ossdb/test_db.js" />
         <item url="file://$PROJECT_DIR$/test/client/spec/controllers/main.js" />
         <item url="file://$PROJECT_DIR$/lib/controllers/users.js" />
         <item url="file://$PROJECT_DIR$/lib/controllers/index.js" />
@@ -35,8 +36,8 @@
         <item url="file://$PROJECT_DIR$/app/scripts/services/auth.js" />
         <item url="file://$PROJECT_DIR$/app/scripts/services/user.js" />
         <item url="file://$PROJECT_DIR$/node_modules/grunt-ts/tasks/modules/compile.js" />
-        <item url="file://$PROJECT_DIR$/app/scripts/directives/mongooseError.js" />
         <item url="file://$PROJECT_DIR$/node_modules/grunt-ts/tasks/modules/index.js" />
+        <item url="file://$PROJECT_DIR$/app/scripts/directives/mongooseError.js" />
         <item url="file://$PROJECT_DIR$/server.js" />
         <item url="file://$PROJECT_DIR$/app/scripts/controllers/settings.js" />
       </sourceFilesUrls>
@@ -54,9 +55,10 @@
       <root url="file://$PROJECT_DIR$/node_modules/grunt-ts/tasks/modules/transformers.js" />
       <root url="file://$PROJECT_DIR$/node_modules/grunt-ts/tasks/modules/utils.js" />
       <root url="file://$PROJECT_DIR$/lib/config/express.js" />
-      <root url="file://$PROJECT_DIR$/node_modules/grunt-ts/tasks/modules/templateCache.js" />
       <root url="file://$PROJECT_DIR$/lib/config/passport.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/grunt-ts/tasks/modules/templateCache.js" />
       <root url="file://$PROJECT_DIR$/lib/controllers/api.js" />
+      <root url="file://$PROJECT_DIR$/test/server/ossdb/test_db.js" />
       <root url="file://$PROJECT_DIR$/test/client/spec/controllers/main.js" />
       <root url="file://$PROJECT_DIR$/lib/controllers/users.js" />
       <root url="file://$PROJECT_DIR$/lib/controllers/index.js" />
@@ -77,8 +79,8 @@
       <root url="file://$PROJECT_DIR$/node_modules/grunt-ts/tasks/modules/compile.js" />
       <root url="file://$PROJECT_DIR$/app/scripts/services/user.js" />
       <root url="file://$PROJECT_DIR$/server.js" />
-      <root url="file://$PROJECT_DIR$/node_modules/grunt-ts/tasks/modules/index.js" />
       <root url="file://$PROJECT_DIR$/app/scripts/directives/mongooseError.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/grunt-ts/tasks/modules/index.js" />
       <root url="file://$PROJECT_DIR$/app/scripts/controllers/settings.js" />
     </CLASSES>
     <SOURCES />

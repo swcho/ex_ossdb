@@ -3,6 +3,7 @@
 // <reference path="angularjs/angular.d.ts" />
 // <reference path="jquery/jquery.d.ts" />
 /// <reference path="jasmine/jasmine.d.ts" />
+/// <reference path="async/async.d.ts" />
 // <reference path="angular-translate/angular-translate.d.ts" />
 // <reference path="angular-ui-bootstrap/angular-ui-bootstrap.d.ts" />
 // <reference path="angular-ui/angular-ui-router.d.ts" />

@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b67e727-2086-4062-86ee-691f83bf8df5" name="Default" comment="Remove unnecessary include&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/models/ossdb.ts" />
+    <list default="true" id="3b67e727-2086-4062-86ee-691f83bf8df5" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/typings/jugglingdb/jugglingdb.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/server/ossdb/test_db.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/scopes/client.xml" afterPath="$PROJECT_DIR$/.idea/scopes/client.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/models/project.js" afterPath="$PROJECT_DIR$/lib/models/project.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/models/project.ts" afterPath="$PROJECT_DIR$/lib/models/project.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/Gruntfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/models/ossdb.ts" afterPath="$PROJECT_DIR$/lib/models/ossdb.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/tsd.d.ts" afterPath="$PROJECT_DIR$/typings/tsd.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tsd.json" afterPath="$PROJECT_DIR$/tsd.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ossdb2.iws" />
@@ -30,22 +33,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="project.ts" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/models/project.ts">
+      <file leaf-file-name="ossdb.ts" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/models/ossdb.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="0" selection-start="1073" selection-end="1073" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="689">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <marker date="1395712422737" expanded="true" signature="361:426" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.ts" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/models/user.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="0" selection-start="629" selection-end="898" vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="2340">
+            <state line="47" column="0" selection-start="948" selection-end="964" vertical-scroll-proportion="0.0" vertical-offset="200" max-vertical-offset="767">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -53,10 +44,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="thing.ts" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/models/thing.ts">
+      <file leaf-file-name="test_db.ts" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/server/ossdb/test_db.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="115" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="468">
+            <state line="28" column="25" selection-start="834" selection-end="834" vertical-scroll-proportion="0.21869488" vertical-offset="240" max-vertical-offset="988">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -64,30 +55,77 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="users.ts" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/controllers/users.ts">
+      <file leaf-file-name="basic-querying.test.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/jugglingdb-sqlite3/test/basic-querying.test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="962">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="model.ts" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/server/user/model.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="0" selection-start="1754" selection-end="1754" vertical-scroll-proportion="0.0" vertical-offset="6" max-vertical-offset="884">
+            <state line="97" column="27" selection-start="2144" selection-end="2144" vertical-scroll-proportion="0.0" vertical-offset="975" max-vertical-offset="1586">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ossdb.ts" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/models/ossdb.ts">
+      <file leaf-file-name="init.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/jugglingdb-sqlite3/test/init.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="44" selection-end="44" vertical-scroll-proportion="0.044419136" vertical-offset="0" max-vertical-offset="878">
+            <state line="9" column="0" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="karma.conf.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/karma.conf.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="6" selection-start="882" selection-end="882" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="806">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gruntfile.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="462" column="0" selection-start="14471" selection-end="14471" vertical-scroll-proportion="0.0" vertical-offset="5681" max-vertical-offset="7462">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lib.d.ts" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/lib.d.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="68" column="4" selection-start="2253" selection-end="2253" vertical-scroll-proportion="0.0" vertical-offset="434" max-vertical-offset="119249">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mocha.d.ts" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/typings/mocha/mocha.d.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="31" selection-start="190" selection-end="190" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="676">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="project.ts" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/models/project.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="4" selection-start="623" selection-end="641" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="689">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jugglingdb.d.ts" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/typings/jugglingdb/jugglingdb.d.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="43" column="28" selection-start="1454" selection-end="1454" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2990">
               <folding />
             </state>
           </provider>
@@ -109,7 +147,6 @@
         <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/tsd.json" />
         <option value="$PROJECT_DIR$/lib/models/thing.ts" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/lib/controllers/session.ts" />
         <option value="$PROJECT_DIR$/typings/node/node.d.ts" />
         <option value="$PROJECT_DIR$/lib/models/user.ts" />
@@ -145,16 +182,23 @@
         <option value="$PROJECT_DIR$/typings/should/should.d.ts" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/test/server/user/model.ts" />
-        <option value="$PROJECT_DIR$/Gruntfile.js" />
         <option value="$PROJECT_DIR$/test/server/thing/api.ts" />
         <option value="$PROJECT_DIR$/test/client/spec/controllers/main.ts" />
         <option value="$PROJECT_DIR$/typings/tsd.d.ts" />
         <option value="$PROJECT_DIR$/lib/models/project.ts" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/Gruntfile.js" />
+        <option value="$PROJECT_DIR$/lib/models/ossdb.ts" />
+        <option value="$PROJECT_DIR$/typings/jugglingdb/jugglingdb.d.ts" />
+        <option value="$PROJECT_DIR$/test/server/ossdb/test_db.ts" />
       </list>
     </option>
   </component>
   <component name="NamedScopeManager">
     <scope name="server" pattern="file:*.ts&amp;&amp;!file:app/*.ts&amp;&amp;!file:test/client/*.ts&amp;&amp;!file:node_modules/*" />
+  </component>
+  <component name="NodeJsMochaPackageDirSetting">
+    <data>/usr/lib/node_modules/mocha</data>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="926" />
@@ -253,20 +297,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="node_modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model.ts" />
-              <option name="myItemType" value="com.intellij.plugins.watcher.projectView.NestingTreeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -279,20 +311,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="node_modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
+              <option name="myItemId" value="jugglingdb-sqlite3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api.ts" />
-              <option name="myItemType" value="com.intellij.plugins.watcher.projectView.NestingTreeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -302,16 +326,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ossdb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jugglingdb-sqlite3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -323,43 +351,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
+              <option name="myItemId" value="node_modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ossdb2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ossdb" />
+              <option name="myItemId" value="jugglingdb-sqlite3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ossdb2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ossdb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -369,28 +369,32 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/test/server/ossdb" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="project.scopes" />
+    <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="LayoutCode.rearrangeEntriesJavaScript" value="false" />
     <property name="FullScreen" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="restartRequiresConfirmation" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/typings/jugglingdb" />
       <recent name="$PROJECT_DIR$/typings/superagent" />
       <recent name="$PROJECT_DIR$/typings/should" />
       <recent name="$PROJECT_DIR$/typings/supertest" />
       <recent name="$PROJECT_DIR$/typings/mocha" />
-      <recent name="$PROJECT_DIR$/typings/passportjs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test/server" />
+      <recent name="$PROJECT_DIR$/test" />
       <recent name="$PROJECT_DIR$/typings/passportjs" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Mocha.test_ossdb">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -423,11 +427,35 @@
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <test-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui>BDD</ui>
+      <require />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
     <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
       <browser start="false" url="" with-js-debugger="false" />
       <method />
     </configuration>
-    <list size="0" />
+    <configuration default="false" name="test_ossdb" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <test-directory>$PROJECT_DIR$/test/server/ossdb</test-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui>BDD</ui>
+      <require />
+      <recursive>false</recursive>
+      <RunnerSettings RunnerId="RunnerForMochaJavaScript" />
+      <ConfigurationWrapper RunnerId="RunnerForMochaJavaScript" />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Mocha.test_ossdb" />
+    </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
@@ -477,7 +505,11 @@
       <created>1395710731958</created>
       <updated>1395710731958</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Try with mongodb but we need sqlite&#10;">
+      <created>1395712495521</created>
+      <updated>1395712495521</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -486,19 +518,19 @@
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36333698" sideWeight="0.49964765" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36323366" sideWeight="0.49964765" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32779622" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26872247" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25330397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36501902" sideWeight="0.5003524" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32225913" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32225913" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32821077" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -524,7 +556,8 @@
     <MESSAGE value="TypeScript applied for client side JavaScripts&#10;" />
     <MESSAGE value="Add missing definition files" />
     <MESSAGE value="Remove unnecessary include&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove unnecessary include&#10;" />
+    <MESSAGE value="Try with mongodb but we need sqlite&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Try with mongodb but we need sqlite&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -598,21 +631,9 @@
         <state line="1815" column="0" selection-start="61126" selection-end="61126" vertical-scroll-proportion="41.18182" vertical-offset="0" max-vertical-offset="23634" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/typings/passportjs/passport.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="51" selection-end="51" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3432" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/server/thing/api.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="0" selection-start="724" selection-end="724" vertical-scroll-proportion="0.0" vertical-offset="52" max-vertical-offset="312" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typings/mocha/mocha.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="1" selection-start="652" selection-end="652" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="676">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file:///usr/lib/node_modules/typescript/bin/lib.d.ts">
@@ -622,24 +643,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/typings/superagent/superagent.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="42" selection-start="0" selection-end="42" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1170" />
+        <state line="0" column="42" selection-start="0" selection-end="42" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1170">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/typings/supertest/supertest.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="50" selection-start="50" selection-end="50" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="742" />
+        <state line="0" column="50" selection-start="50" selection-end="50" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="742">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/server/user/model.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="56" column="0" selection-start="0" selection-end="1763" vertical-scroll-proportion="0.0" vertical-offset="728" max-vertical-offset="897" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typings/mongoose/mongoose.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="151" column="12" selection-start="6411" selection-end="6411" vertical-scroll-proportion="0.0" vertical-offset="1801" max-vertical-offset="2561">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/typings/should/should.d.ts">
@@ -649,16 +667,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="5" selection-start="1768" selection-end="1768" vertical-scroll-proportion="0.0" vertical-offset="498" max-vertical-offset="962" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="51" selection-start="2697" selection-end="2697" vertical-scroll-proportion="0.0" vertical-offset="611" max-vertical-offset="7462" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/typings/angularjs/angular-scenario.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state line="147" column="12" selection-start="3786" selection-end="3786" vertical-scroll-proportion="0.0" vertical-offset="1683" max-vertical-offset="2236">
@@ -666,23 +674,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/typings/node/node.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="18" selection-start="1386" selection-end="1392" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="16458">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/typings/angularjs/angular.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="11219">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/server/thing/api.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="56" selection-start="56" selection-end="56" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="594">
           <folding />
         </state>
       </provider>
@@ -712,7 +706,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="0" selection-start="629" selection-end="898" vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="2340">
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -721,7 +715,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="115" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="468">
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -730,32 +724,165 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="962">
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/models/project.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="0" selection-start="1073" selection-end="1073" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="689">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1395712422737" expanded="true" signature="361:426" placeholder="..." />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/server/user/model.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="0" selection-start="1754" selection-end="1754" vertical-scroll-proportion="0.0" vertical-offset="6" max-vertical-offset="884">
+        <state line="65" column="0" selection-start="1754" selection-end="1754" vertical-scroll-proportion="0.9111617" vertical-offset="6" max-vertical-offset="884">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/controllers/api.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="500" selection-end="500" vertical-scroll-proportion="0.29612756" vertical-offset="0" max-vertical-offset="878">
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="33" selection-start="312" selection-end="312" vertical-scroll-proportion="-7.090909" vertical-offset="0" max-vertical-offset="988">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/jugglingdb/test/schema.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="819">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/jugglingdb/lib/schema.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="156" max-vertical-offset="7904">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/typings/node/node.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1076" column="11" selection-start="47337" selection-end="47337" vertical-scroll-proportion="0.0" vertical-offset="13761" max-vertical-offset="16458">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/typings/mongoose/mongoose.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="12" selection-start="2523" selection-end="2523" vertical-scroll-proportion="0.86823106" vertical-offset="364" max-vertical-offset="2561">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/typings/passportjs/passport.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="11" selection-start="2354" selection-end="2354" vertical-scroll-proportion="0.0" vertical-offset="572" max-vertical-offset="3432">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/models/project.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="4" selection-start="623" selection-end="641" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="689">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/server/thing/api.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="784" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="338">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/lib.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="4" selection-start="2253" selection-end="2253" vertical-scroll-proportion="0.0" vertical-offset="434" max-vertical-offset="119249">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/karma.conf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="6" selection-start="882" selection-end="882" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="806">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="462" column="0" selection-start="14471" selection-end="14471" vertical-scroll-proportion="0.0" vertical-offset="5681" max-vertical-offset="7462">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/server/ossdb/test_db.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="4" selection-start="1007" selection-end="1007" vertical-scroll-proportion="0.77954143" vertical-offset="0" max-vertical-offset="611">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/typings/mocha/mocha.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="31" selection-start="190" selection-end="190" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="676">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/jugglingdb-sqlite3/test/sqlite3.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="567">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/jugglingdb-sqlite3/test/init.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/jugglingdb-sqlite3/test/basic-querying.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="97" column="27" selection-start="2144" selection-end="2144" vertical-scroll-proportion="0.0" vertical-offset="975" max-vertical-offset="1586">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/models/ossdb.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="44" selection-end="44" vertical-scroll-proportion="0.044419136" vertical-offset="0" max-vertical-offset="878">
+        <state line="47" column="0" selection-start="948" selection-end="964" vertical-scroll-proportion="0.0" vertical-offset="200" max-vertical-offset="767">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/typings/jugglingdb/jugglingdb.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="28" selection-start="1454" selection-end="1454" vertical-scroll-proportion="0.0" vertical-offset="310" max-vertical-offset="2990">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/server/ossdb/test_db.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="25" selection-start="834" selection-end="834" vertical-scroll-proportion="0.21869488" vertical-offset="240" max-vertical-offset="988">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
