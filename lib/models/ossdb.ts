@@ -55,8 +55,8 @@ export var PackageUsage: jugglingdb.Model<TPackageUsage> = db.define<TPackageUsa
 
 //db.autoupdate();
 
-//Oss.hasMany(Package, {as: 'packages', foreignKey: 'packageId'});
-Oss.hasMany(Package);
+Oss.hasMany(Package, {as: 'packages', foreignKey: 'ossId'});
+//Oss.hasMany(Package);
 License.hasMany(Package);
 Project.hasMany(PackageUsage, {as: 'packages', foreignKey: 'projectId'});
 Package.hasMany(PackageUsage, {as: 'projects', foreignKey: 'packageId'});

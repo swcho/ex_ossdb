@@ -88,12 +88,31 @@ describe('ossdb functions', function() {
         async.series(series);
     });
 
-    it('Oss should have OpenSSL', function(done) {
-        console.log('start');
+    it('Oss should have OpenSSL', (done) => {
         ossdb.Oss.count((err, count) => {
-            console.log('counted');
             (<any>count).should.be.exactly(1);
             done();
         });
     });
+
+    it('Oss should have one package', (done) => {
+        ossdb.Oss.all((err, model) => {
+            var oss = model[0];
+            console.log(oss);
+            oss.packages((err, packages) => {
+                console.log(packages);
+                done();
+            });
+        });
+    });
+
+    it('Project has one package', (done) => {
+        ossdb.Project.all((err, model) => {
+            var project = model[0];
+            project.packages((err, packages) => {
+                console.log(packages);
+                done();
+            });
+        });
+    })
 });

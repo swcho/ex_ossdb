@@ -151,7 +151,7 @@ declare module 'jugglingdb' {
          * Fields used for filter and sort should be declared with {index: true} in model definition.
          */
         all(params: TModelAllParams, callback: (err, array: T[]) => void);
-        all(callback: (err, array: T[]) => void);
+        all(callback: (err, array: any[]) => void);
 
         /*
          * Query count of instances stored in database.
