@@ -1,8 +1,12 @@
+/// <reference path="../../../typings/angularjs/angular.d.ts" />
 angular.module('meanTrialApp').controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [
         {
             'title': 'Home',
             'link': '/'
+        }, {
+            'title': 'OSS',
+            'link': '/oss'
         }, {
             'title': 'Settings',
             'link': '/settings'
@@ -18,3 +22,4 @@ angular.module('meanTrialApp').controller('NavbarCtrl', function ($scope, $locat
         return route === $location.path();
     };
 });
+//# sourceMappingURL=navbar.js.map

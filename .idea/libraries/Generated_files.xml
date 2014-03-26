@@ -3,8 +3,8 @@
     <properties>
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/node_modules/grunt-ts/tasks/modules/html2ts.js" />
-        <item url="file://$PROJECT_DIR$/node_modules/grunt-ts/tasks/modules/cacheUtils.js" />
         <item url="file://$PROJECT_DIR$/lib/models/ossdb.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/grunt-ts/tasks/modules/cacheUtils.js" />
         <item url="file://$PROJECT_DIR$/lib/models/project.js" />
         <item url="file://$PROJECT_DIR$/node_modules/grunt-ts/tasks/modules/reference.js" />
         <item url="file://$PROJECT_DIR$/lib/models/thing.js" />
@@ -13,8 +13,8 @@
         <item url="file://$PROJECT_DIR$/node_modules/grunt-ts/tasks/modules/transformers.js" />
         <item url="file://$PROJECT_DIR$/node_modules/grunt-ts/tasks/modules/utils.js" />
         <item url="file://$PROJECT_DIR$/lib/config/express.js" />
-        <item url="file://$PROJECT_DIR$/node_modules/grunt-ts/tasks/modules/templateCache.js" />
         <item url="file://$PROJECT_DIR$/lib/config/passport.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/grunt-ts/tasks/modules/templateCache.js" />
         <item url="file://$PROJECT_DIR$/lib/controllers/api.js" />
         <item url="file://$PROJECT_DIR$/test/server/ossdb/test_db.js" />
         <item url="file://$PROJECT_DIR$/test/client/spec/controllers/main.js" />
@@ -37,16 +37,17 @@
         <item url="file://$PROJECT_DIR$/app/scripts/services/user.js" />
         <item url="file://$PROJECT_DIR$/node_modules/grunt-ts/tasks/modules/compile.js" />
         <item url="file://$PROJECT_DIR$/node_modules/grunt-ts/tasks/modules/index.js" />
-        <item url="file://$PROJECT_DIR$/app/scripts/directives/mongooseError.js" />
         <item url="file://$PROJECT_DIR$/server.js" />
+        <item url="file://$PROJECT_DIR$/app/scripts/controllers/oss.js" />
+        <item url="file://$PROJECT_DIR$/app/scripts/directives/mongooseError.js" />
         <item url="file://$PROJECT_DIR$/app/scripts/controllers/settings.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/dist/lib/controllers/session.js" />
       <root url="file://$PROJECT_DIR$/node_modules/grunt-ts/tasks/modules/html2ts.js" />
-      <root url="file://$PROJECT_DIR$/lib/models/ossdb.js" />
       <root url="file://$PROJECT_DIR$/node_modules/grunt-ts/tasks/modules/cacheUtils.js" />
+      <root url="file://$PROJECT_DIR$/lib/models/ossdb.js" />
       <root url="file://$PROJECT_DIR$/lib/models/project.js" />
       <root url="file://$PROJECT_DIR$/node_modules/grunt-ts/tasks/modules/reference.js" />
       <root url="file://$PROJECT_DIR$/lib/models/thing.js" />
@@ -55,8 +56,8 @@
       <root url="file://$PROJECT_DIR$/node_modules/grunt-ts/tasks/modules/transformers.js" />
       <root url="file://$PROJECT_DIR$/node_modules/grunt-ts/tasks/modules/utils.js" />
       <root url="file://$PROJECT_DIR$/lib/config/express.js" />
-      <root url="file://$PROJECT_DIR$/lib/config/passport.js" />
       <root url="file://$PROJECT_DIR$/node_modules/grunt-ts/tasks/modules/templateCache.js" />
+      <root url="file://$PROJECT_DIR$/lib/config/passport.js" />
       <root url="file://$PROJECT_DIR$/lib/controllers/api.js" />
       <root url="file://$PROJECT_DIR$/test/server/ossdb/test_db.js" />
       <root url="file://$PROJECT_DIR$/test/client/spec/controllers/main.js" />
@@ -78,8 +79,9 @@
       <root url="file://$PROJECT_DIR$/app/scripts/services/auth.js" />
       <root url="file://$PROJECT_DIR$/node_modules/grunt-ts/tasks/modules/compile.js" />
       <root url="file://$PROJECT_DIR$/app/scripts/services/user.js" />
-      <root url="file://$PROJECT_DIR$/server.js" />
       <root url="file://$PROJECT_DIR$/app/scripts/directives/mongooseError.js" />
+      <root url="file://$PROJECT_DIR$/app/scripts/controllers/oss.js" />
+      <root url="file://$PROJECT_DIR$/server.js" />
       <root url="file://$PROJECT_DIR$/node_modules/grunt-ts/tasks/modules/index.js" />
       <root url="file://$PROJECT_DIR$/app/scripts/controllers/settings.js" />
     </CLASSES>

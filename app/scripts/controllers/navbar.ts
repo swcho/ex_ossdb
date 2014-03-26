@@ -7,6 +7,9 @@ angular.module('meanTrialApp')
             'title': 'Home',
             'link': '/'
         }, {
+            'title': 'OSS',
+            'link': '/oss'
+        }, {
             'title': 'Settings',
             'link': '/settings'
         }];

@@ -26,6 +26,11 @@ angular.module('meanTrialApp', [
                 controller: 'SettingsCtrl',
                 authenticate: true
             })
+            .when('/oss', {
+                templateUrl: 'partials/oss',
+                controller: 'OssCtrl',
+                authenticate: true
+            })
             .otherwise({
                 redirectTo: '/'
             });
