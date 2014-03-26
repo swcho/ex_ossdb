@@ -8,24 +8,17 @@ import ossdb = require('../models/ossdb');
 import async = require('async');
 
 export function get_oss(req, res) {
-    ossdb.Oss.all((err, data) => {
-        var s = [];
-        data.forEach((oss) => {
-            s.push((cb) => {
-                oss.getPackages((err, packages) => {
-                    console.log(packages);
-                    oss.packages = packages;
-                    cb();
-                });
-            });
+    var id = req.params.id;
+    if (id) {
+        ossdb.get_oss_by_id(id, (oss) => {
+            res.json(oss);
         });
-        s.push((cb) => {
-            console.log(data);
-            res.json(data);
-        })
-        async.series(s);
-    });
-};
+    } else {
+        ossdb.get_oss_all((ossList) => {
+            res.json(ossList);
+        });
+    }
+}
 
 export function get_license(req, res) {
     ossdb.License.all((err, data) => {

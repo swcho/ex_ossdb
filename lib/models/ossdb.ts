@@ -200,3 +200,31 @@ export function set_fixture(done) {
         project: fit_project
     };
 }
+
+export function get_oss_by_id(aId, aCb: (oss: any) => void) {
+    Oss.find(aId, (err, oss) => {
+        oss.getPackages((err, packages) => {
+            oss.packages = packages;
+            aCb(oss);
+        });
+    });
+}
+
+export function get_oss_all(aCb: (ossList: any) => void) {
+    Oss.all((err, ossList) => {
+        var s = [];
+        ossList.forEach((oss) => {
+            s.push((cb) => {
+                oss.getPackages((err, packages) => {
+                    oss.packages = packages;
+                    cb();
+                });
+            });
+        });
+        s.push((cb) => {
+            aCb(ossList);
+            cb();
+        });
+        async.series(s);
+    });
+}

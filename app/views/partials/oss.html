@@ -1,12 +1,23 @@
 <div ng-include="'partials/navbar'"></div>
 
 <div class="container">
-  <div class="row" ng-repeat="oss in ossList">
-      <div class="col-xs-4"><strong>{{oss.name}}</strong></div>
-      <div class="col-xs-8"><a href="{{oss.projectUrl}}">Project Home</a></div>
-  </div>
+    <table class="table table-condensed table-hover">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Project Home</th>
+        </tr>
+        </thead>
+        <tbody ng-repeat="oss in ossList">
+            <td>{{oss.id}}</td>
+            <td><a href="oss/{{oss.id}}">{{oss.name}}</a></td>
+            <td><a href="{{oss.projectUrl}}">{{oss.projectUrl}}</a></td>
+        </tbody>
+
+    </table>
 </div>
 
 <div class="footer">
-  <p>by Quality Planning Team</p>
+    <p>by Quality Planning Team</p>
 </div>

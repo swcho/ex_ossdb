@@ -29,22 +29,27 @@ angular.module('meanTrialApp', [
             .when('/oss', {
                 templateUrl: 'partials/oss',
                 controller: 'OssCtrl',
-                authenticate: true
+//                authenticate: true
+            })
+            .when('/oss/:id', {
+                templateUrl: 'partials/oss_detail',
+                controller: 'OssDetailCtrl',
+//                authenticate: true
             })
             .when('/license', {
                 templateUrl: 'partials/license',
                 controller: 'LicenseCtrl',
-                authenticate: true
+//                authenticate: true
             })
             .when('/package', {
                 templateUrl: 'partials/package',
                 controller: 'PackageCtrl',
-                authenticate: true
+//                authenticate: true
             })
             .when('/project', {
                 templateUrl: 'partials/project',
                 controller: 'ProjectCtrl',
-                authenticate: true
+//                authenticate: true
             })
             .otherwise({
                 redirectTo: '/'

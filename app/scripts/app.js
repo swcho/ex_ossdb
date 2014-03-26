@@ -1,4 +1,3 @@
-/// <reference path="../../typings/angularjs/angular.d.ts" />
 angular.module('meanTrialApp', [
     'ngCookies',
     'ngResource',
@@ -20,27 +19,25 @@ angular.module('meanTrialApp', [
         authenticate: true
     }).when('/oss', {
         templateUrl: 'partials/oss',
-        controller: 'OssCtrl',
-        authenticate: true
+        controller: 'OssCtrl'
+    }).when('/oss/:id', {
+        templateUrl: 'partials/oss_detail',
+        controller: 'OssDetailCtrl'
     }).when('/license', {
         templateUrl: 'partials/license',
-        controller: 'LicenseCtrl',
-        authenticate: true
+        controller: 'LicenseCtrl'
     }).when('/package', {
         templateUrl: 'partials/package',
-        controller: 'PackageCtrl',
-        authenticate: true
+        controller: 'PackageCtrl'
     }).when('/project', {
         templateUrl: 'partials/project',
-        controller: 'ProjectCtrl',
-        authenticate: true
+        controller: 'ProjectCtrl'
     }).otherwise({
         redirectTo: '/'
     });
 
     $locationProvider.html5Mode(true);
 
-    // Intercept 401s and redirect you to login
     $httpProvider.interceptors.push([
         '$q', '$location', function ($q, $location) {
             return {
@@ -55,11 +52,9 @@ angular.module('meanTrialApp', [
             };
         }]);
 }).run(function ($rootScope, $location, Auth) {
-    // Redirect to login if route requires auth and you're not logged in
     $rootScope.$on('$routeChangeStart', function (event, next) {
         if (next.authenticate && !Auth.isLoggedIn()) {
             $location.path('/login');
         }
     });
 });
-//# sourceMappingURL=app.js.map
