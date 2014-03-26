@@ -8,6 +8,15 @@ angular.module('meanTrialApp').controller('NavbarCtrl', function ($scope, $locat
             'title': 'OSS',
             'link': '/oss'
         }, {
+            'title': 'License',
+            'link': '/license'
+        }, {
+            'title': 'Package',
+            'link': '/package'
+        }, {
+            'title': 'Project',
+            'link': '/project'
+        }, {
             'title': 'Settings',
             'link': '/settings'
         }];

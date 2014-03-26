@@ -10,6 +10,15 @@ angular.module('meanTrialApp')
             'title': 'OSS',
             'link': '/oss'
         }, {
+            'title': 'License',
+            'link': '/license'
+        }, {
+            'title': 'Package',
+            'link': '/package'
+        }, {
+            'title': 'Project',
+            'link': '/project'
+        }, {
             'title': 'Settings',
             'link': '/settings'
         }];

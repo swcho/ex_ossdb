@@ -31,6 +31,21 @@ angular.module('meanTrialApp', [
                 controller: 'OssCtrl',
                 authenticate: true
             })
+            .when('/license', {
+                templateUrl: 'partials/license',
+                controller: 'LicenseCtrl',
+                authenticate: true
+            })
+            .when('/package', {
+                templateUrl: 'partials/package',
+                controller: 'PackageCtrl',
+                authenticate: true
+            })
+            .when('/project', {
+                templateUrl: 'partials/project',
+                controller: 'ProjectCtrl',
+                authenticate: true
+            })
             .otherwise({
                 redirectTo: '/'
             });
