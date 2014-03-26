@@ -16,6 +16,7 @@ export interface TOss {
     name: string;
     projectUrl: string;
     packages?: TPackage[];
+    getPackages?: Function;
 }
 
 export interface TLicense {
@@ -105,10 +106,10 @@ export function set_fixture(done) {
 
     var fit_relation_package = [{
         ossId: 1,
-        licenseId: 1
+        licenseId: 2
     }, {
         ossId: 1,
-        licenseId: 1
+        licenseId: 2
     }, {
         ossId: 1,
         licenseId: 1

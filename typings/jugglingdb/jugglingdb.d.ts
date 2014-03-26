@@ -144,7 +144,7 @@ declare module 'jugglingdb' {
         /*
          * Find instance by id. Invoke callback when ready. Callback accepts two arguments: error and model instance.
          */
-        find(id, callback: (err, model: Model<T>) => void);
+        find(id, callback: (err, item: T) => void);
 
         /*
          * Find all instances of Model, matched by query.

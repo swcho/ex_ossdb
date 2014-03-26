@@ -5,7 +5,8 @@ angular.module('meanTrialApp', [
         'ngCookies',
         'ngResource',
         'ngSanitize',
-        'ngRoute'
+        'ngRoute',
+        //'ui.router'
     ])
     .config(function ($routeProvider, $locationProvider, $httpProvider) {
         $routeProvider
