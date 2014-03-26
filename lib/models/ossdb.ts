@@ -103,10 +103,35 @@ export function set_fixture(done) {
         projectId: 'hdr1000s'
     }];
 
+    var fit_relation_package = [{
+        ossId: 1,
+        licenseId: 1
+    }, {
+        ossId: 1,
+        licenseId: 1
+    }, {
+        ossId: 1,
+        licenseId: 1
+    }, {
+        ossId: 2,
+        licenseId: 1
+    }];
+
+    var fit_relation_packageUsage = [{
+        projectId: 1,
+        packageId: 1
+    }, {
+        projectId: 1,
+        packageId: 2
+    }, {
+        projectId: 2,
+        packageId: 1
+    }];
+
     var series = [];
     var newOss;
     var newLicense;
-    var newPackage;
+    var newPackages;
     var newProject;
     series.push((cb) => {
         db.automigrate(cb);
@@ -125,7 +150,7 @@ export function set_fixture(done) {
     });
     series.push((cb) => {
         Package.create(fit_package, (err, model) => {
-            newPackage = model;
+            newPackages = model;
             cb();
         });
     });
@@ -135,21 +160,34 @@ export function set_fixture(done) {
             cb();
         });
     });
-//    series.push((cb) => {
-//        // newOss.packages.build(newPackage).save(cb); <= this will remove name of newPackage
-//        newPackage.updateAttribute('ossId', newOss.id, cb);
-//    });
-//    series.push((cb) => {
-//        newPackage.updateAttribute('licenseId', newLicense.id, cb);
-//    });
-//    series.push((cb) => {
-//        var newUsage = PackageUsage.create({});
-//        newUsage.updateAttribute('projectId', newProject.id, () => {
-//            newUsage.updateAttribute('packageId', newPackage.id, () => {
-//                newUsage.save(cb);
-//            });
-//        });
-//    });
+    series.push((cb) => {
+        var s = [];
+        newPackages.forEach((p, i) => {
+            s.push((cb) => {
+                console.log('set package relation');
+                p.updateAttributes(fit_relation_package[i], cb);
+            })
+        });
+        s.push(() => {
+            cb();
+        });
+        async.series(s);
+    });
+    series.push((cb) => {
+        var s = [];
+        fit_relation_packageUsage.forEach((usage) => {
+            var newUsage = PackageUsage.create({
+                'projectId': usage.projectId,
+                'packageId': usage.packageId
+            }, cb);
+//            newUsage.updateAttributes(, cb);
+            //newUsage.save(cb);
+        });
+        s.push(() => {
+            cb();
+        });
+        async.series(s);
+    });
     series.push((cb) => {
         console.log('prepare done');
         done();
