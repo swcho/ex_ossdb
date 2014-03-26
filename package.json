@@ -10,7 +10,8 @@
     "passport-local": "~0.1.6",
     "ejs": "~0.8.4",
     "jugglingdb": "0.2.x",
-    "jugglingdb-sqlite3": "latest"
+    "jugglingdb-sqlite3": "latest",
+    "async": "0.2.10"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

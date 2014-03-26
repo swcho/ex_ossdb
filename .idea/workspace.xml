@@ -2,7 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b67e727-2086-4062-86ee-691f83bf8df5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/config/dummydata.ts" afterPath="$PROJECT_DIR$/lib/config/dummydata.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/controllers/api.js" afterPath="$PROJECT_DIR$/lib/controllers/api.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/server/thing/api.js" afterPath="$PROJECT_DIR$/test/server/thing/api.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/config/dummydata.js" afterPath="$PROJECT_DIR$/lib/config/dummydata.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/config/express.js" afterPath="$PROJECT_DIR$/lib/config/express.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/controllers/index.js" afterPath="$PROJECT_DIR$/lib/controllers/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/middleware.js" afterPath="$PROJECT_DIR$/lib/middleware.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/server/user/model.js" afterPath="$PROJECT_DIR$/test/server/user/model.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/config/passport.js" afterPath="$PROJECT_DIR$/lib/config/passport.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/models/project.js" afterPath="$PROJECT_DIR$/lib/models/project.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/routes.js" afterPath="$PROJECT_DIR$/lib/routes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/controllers/session.js" afterPath="$PROJECT_DIR$/lib/controllers/session.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/models/thing.js" afterPath="$PROJECT_DIR$/lib/models/thing.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/models/user.js" afterPath="$PROJECT_DIR$/lib/models/user.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/controllers/users.js" afterPath="$PROJECT_DIR$/lib/controllers/users.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ossdb2.iws" />
@@ -57,13 +72,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dummydata.ts" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="dummydata.ts" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/config/dummydata.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="13" selection-start="1440" selection-end="1440" vertical-scroll-proportion="0.5125448" vertical-offset="195" max-vertical-offset="806">
+            <state line="55" column="0" selection-start="1851" selection-end="1851" vertical-scroll-proportion="0.0" vertical-offset="269" max-vertical-offset="806">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="22" selection-start="387" selection-end="387" vertical-scroll-proportion="0.40944883" vertical-offset="0" max-vertical-offset="1001">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -133,12 +157,12 @@
         <option value="$PROJECT_DIR$/test/client/spec/controllers/main.ts" />
         <option value="$PROJECT_DIR$/typings/tsd.d.ts" />
         <option value="$PROJECT_DIR$/lib/models/project.ts" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/Gruntfile.js" />
         <option value="$PROJECT_DIR$/typings/jugglingdb/jugglingdb.d.ts" />
         <option value="$PROJECT_DIR$/lib/models/ossdb.ts" />
         <option value="$PROJECT_DIR$/test/server/ossdb/test_db.ts" />
         <option value="$PROJECT_DIR$/lib/config/dummydata.ts" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -425,7 +449,15 @@
       <created>1395736368074</created>
       <updated>1395736368074</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="- Dummy data start&#10;">
+      <created>1395739781074</created>
+      <updated>1395739781074</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Add missing async definition&#10;">
+      <created>1395793021141</created>
+      <updated>1395793021141</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -434,7 +466,7 @@
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36323366" sideWeight="0.49964765" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36323366" sideWeight="0.49964765" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32779622" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -442,7 +474,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36501902" sideWeight="0.5003524" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33997786" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33997786" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -476,7 +508,9 @@
     <MESSAGE value="- Juggling DB integrated and used for OSSDB management&#10;- Mocha based test applied" />
     <MESSAGE value="- Relation updated for Juggling DB&#10;&#10;" />
     <MESSAGE value="- Relation defined and tested&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Relation defined and tested&#10;" />
+    <MESSAGE value="- Dummy data start&#10;" />
+    <MESSAGE value="Add missing async definition&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add missing async definition&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -664,13 +698,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="33" selection-start="312" selection-end="312" vertical-scroll-proportion="-7.090909" vertical-offset="0" max-vertical-offset="988">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/jugglingdb/test/schema.test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="819">
@@ -816,10 +843,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/config/dummydata.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="13" selection-start="1440" selection-end="1440" vertical-scroll-proportion="0.5125448" vertical-offset="195" max-vertical-offset="806">
+        <state line="55" column="0" selection-start="1851" selection-end="1851" vertical-scroll-proportion="0.0" vertical-offset="269" max-vertical-offset="806">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="22" selection-start="387" selection-end="387" vertical-scroll-proportion="0.40944883" vertical-offset="0" max-vertical-offset="1001">
+          <folding />
         </state>
       </provider>
     </entry>
