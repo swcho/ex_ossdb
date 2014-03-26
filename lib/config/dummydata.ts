@@ -54,3 +54,6 @@ User.find({}).remove(function() {
     );
 });
 
+ossdb.set_fixture(() => {
+    console.log('oss fixture configured');
+});

@@ -16,81 +16,14 @@ import ossdb = require('../../../lib/models/ossdb');
 
 describe('ossdb functions', function() {
 
+    var fit
     beforeEach((done) => {
-
-        var series = [];
-        var newOss;
-        var newLicense;
-        var newPackage;
-        var newProject;
-        series.push((cb) => {
-            ossdb.db.automigrate(cb);
-        });
-        series.push((cb) => {
-            ossdb.Oss.create({
-                name: "Open SSL",
-                projectUrl: ''
-            }, (err, model) => {
-                model.save((err, model) => {
-                    newOss = model;
-                    console.log(newOss);
-                    cb();
-                });
-            });
-        });
-        series.push((cb) => {
-            ossdb.License.create({
-                name: 'GPL 3.0',
-                type: 'P'
-            }, (err, model) => {
-                newLicense = model;
-                model.save(cb);
-            });
-        });
-        series.push((cb) => {
-            ossdb.Package.create({
-                name: 'libopenssl.1.0.so'
-            }, (err, model) => {
-                model.save((err, model) => {
-                    newPackage = model;
-                    console.log(newPackage);
-                    cb();
-                });
-            });
-        });
-        series.push((cb) => {
-            ossdb.Project.create({
-                projectId: 'hms1000sph2'
-            }, (err, model) => {
-                newProject = model;
-                model.save(cb);
-            });
-        });
-        series.push((cb) => {
-            // newOss.packages.build(newPackage).save(cb); <= this will remove name of newPackage
-            newPackage.updateAttribute('ossId', newOss.id, cb);
-        });
-        series.push((cb) => {
-            newPackage.updateAttribute('licenseId', newLicense.id, cb);
-        });
-        series.push((cb) => {
-            var newUsage = ossdb.PackageUsage.create({});
-            newUsage.updateAttribute('projectId', newProject.id, () => {
-                newUsage.updateAttribute('packageId', newPackage.id, () => {
-                    newUsage.save(cb);
-                });
-            });
-        });
-        series.push((cb) => {
-            console.log('prepare done');
-            done();
-        });
-        async.series(series);
+        fit = ossdb.set_fixture(done);
     });
 
     it('Oss should have OpenSSL', (done) => {
         ossdb.Oss.count((err, count) => {
-            (<any>count).should.be.exactly(1);
+            (<any>count).should.be.exactly(fit.oss.length);
             done();
         });
     });
