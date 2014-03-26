@@ -4,6 +4,7 @@ import api = require('./controllers/api');
 import index = require('./controllers/index');
 import users = require('./controllers/users');
 import session = require('./controllers/session');
+import ossdb = require('./controllers/ossdb');
 import middleware = require('./middleware');
 
 /**
@@ -20,6 +21,8 @@ module.exports = function(app) {
 
     app.post('/api/session', session.login);
     app.del('/api/session', session.logout);
+
+    app.get('/api/oss', ossdb.get_oss);
 
     // All undefined api routes should return a 404
     app.get('/api/*', function(req, res) {
