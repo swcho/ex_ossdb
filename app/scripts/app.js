@@ -2,7 +2,9 @@ angular.module('meanTrialApp', [
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngRoute'
+    'ngRoute',
+    'ngAnimate',
+    'ui.bootstrap'
 ]).config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider.when('/', {
         templateUrl: 'partials/main',

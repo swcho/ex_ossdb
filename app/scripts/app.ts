@@ -6,7 +6,8 @@ angular.module('meanTrialApp', [
         'ngResource',
         'ngSanitize',
         'ngRoute',
-        //'ui.router'
+        'ngAnimate',
+        'ui.bootstrap'
     ])
     .config(function ($routeProvider, $locationProvider, $httpProvider) {
         $routeProvider
