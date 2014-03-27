@@ -99,3 +99,9 @@ body {
 .sample-show-hide.ng-hide-remove.ng-hide-remove-active {
     opacity:1;
 }
+
+.gridStyle {
+    border: 1px solid rgb(212,212,212);
+    width: auto;
+    height: 300px
+}

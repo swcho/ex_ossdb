@@ -7,6 +7,7 @@ angular.module('meanTrialApp', [
         'ngSanitize',
         'ngRoute',
         'ngAnimate',
+        'ngGrid',
         'ui.bootstrap'
     ])
     .config(function ($routeProvider, $locationProvider, $httpProvider) {

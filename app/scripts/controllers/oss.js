@@ -23,6 +23,21 @@ angular.module('meanTrialApp').controller('OssCtrl', function ($scope, $http) {
     $http.get('/api/license').success(function (licenseList) {
         console.log(licenseList);
         $scope._licenseList = licenseList;
+        $scope._gridOptions = {
+            data: '_licenseList'
+        };
+        $scope.$apply();
     });
+    $scope._gridOptions = {
+        data: '_oss.packages',
+        enableCellSelection: false,
+        enableRowSelection: true,
+        enableCellEditOnFocus: false,
+        multiSelect: false,
+        columnDefs: [
+            { field: 'id', displayName: 'ID' },
+            { field: 'name', displayName: 'Name' },
+            { field: 'licenseId', displayName: 'License', cellTemplate: '{{_licenseList[licenseId]}}' }]
+    };
 });
 //# sourceMappingURL=oss.js.map
