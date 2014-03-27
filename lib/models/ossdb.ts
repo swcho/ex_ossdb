@@ -22,14 +22,20 @@ export interface TOss {
 export interface TLicense {
     name: string;
     type: string;
+    packages?: TPackage[];
+    getPackages?: Function;
 }
 
 export interface TPackage {
     name: string;
+    getUsages?: Function;
+    projects?: TProject[];
 }
 
 export interface TProject {
     projectId: string;
+    getUsages?: Function;
+    packages?: TPackage[];
 }
 
 export interface TPackageUsage {
@@ -99,9 +105,9 @@ export function set_fixture(done) {
     }];
 
     var fit_project: TProject[] = [{
-        projectId: 'hms1000sph2'
+        projectId: 'project_acme'
     }, {
-        projectId: 'hdr1000s'
+        projectId: 'project_andromeda'
     }];
 
     var fit_relation_package = [{
@@ -224,6 +230,126 @@ export function get_oss_all(aCb: (ossList: any) => void) {
         });
         s.push((cb) => {
             aCb(ossList);
+            cb();
+        });
+        async.series(s);
+    });
+}
+
+export function get_license_by_id(aId, aCb: (license: any) => void) {
+    License.find(aId, (err, license) => {
+        license.getPackages((err, packages) => {
+            license.packages = packages;
+            aCb(license);
+        });
+    });
+}
+
+export function get_license_all(aCb: (licenseList: any) => void) {
+    License.all((err, licenseList) => {
+        var s = [];
+        licenseList.forEach((license) => {
+            s.push((cb) => {
+                license.getPackages((err, packages) => {
+                    license.packages = packages;
+                    cb();
+                });
+            });
+        });
+        s.push((cb) => {
+            aCb(licenseList);
+            cb();
+        });
+        async.series(s);
+    });
+}
+
+function populate_project(aPackage: TPackage, aCb) {
+    aPackage.getUsages((err, usages) => {
+        var projects = [];
+        var series = [];
+        usages.forEach((usage) => {
+            series.push((cb) => {
+                Project.find(usage.projectId, (err, project) => {
+                    console.log(project);
+                    projects.push(project);
+                    cb();
+                });
+            })
+        });
+        series.push((cb) => {
+            aPackage.projects = projects;
+            aCb();
+            cb();
+        });
+        async.series(series);
+    });
+}
+
+export function get_package_by_id(aId, aCb: (package: any) => void) {
+    Package.find(aId, (err, package) => {
+        populate_project(package, () => {
+            aCb(package);
+        });
+    })
+}
+
+export function get_package_all(aCb: (package: any) => void) {
+    Package.all((err, packageList) => {
+        var s = [];
+        packageList.forEach((package) => {
+            s.push((cb) => {
+                populate_project(package, cb);
+            });
+        });
+        s.push((cb) => {
+            console.log(packageList);
+            aCb(packageList);
+            cb();
+        });
+        async.series(s);
+    });
+}
+
+function populate_packages(aProject: TProject, aCb) {
+    aProject.getUsages((err, usages) => {
+        var packages = [];
+        var series = [];
+        usages.forEach((usage) => {
+            series.push((cb) => {
+                Package.find(usage.packageId, (err, package) => {
+                    packages.push(package);
+                    cb();
+                });
+            });
+        });
+        series.push((cb2) => {
+            aProject.packages = packages;
+            aCb();
+            cb2();
+        });
+        async.series(series);
+    });
+}
+
+export function get_project_by_id(aId, aCb: (project: any) => void) {
+    Project.find(aId, (err, project) => {
+        populate_packages(project, () => {
+            aCb(project);
+        });
+    });
+}
+
+export function get_project_all(aCb: (projectList: any) => void) {
+    Project.all((err, projectList) => {
+        var s = [];
+        projectList.forEach((project) => {
+            s.push((cb) => {
+                populate_packages(project, cb);
+            });
+        });
+        s.push((cb) => {
+            aCb(projectList);
             cb();
         });
         async.series(s);

@@ -25,8 +25,11 @@ module.exports = function(app) {
     app.get('/api/oss', ossdb.get_oss);
     app.get('/api/oss/:id', ossdb.get_oss);
     app.get('/api/license', ossdb.get_license);
+    app.get('/api/license/:id', ossdb.get_license);
     app.get('/api/package', ossdb.get_package);
+    app.get('/api/package/:id', ossdb.get_package);
     app.get('/api/project', ossdb.get_project);
+    app.get('/api/project/:id', ossdb.get_project);
 
     // All undefined api routes should return a 404
     app.get('/api/*', function(req, res) {

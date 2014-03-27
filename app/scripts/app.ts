@@ -44,14 +44,29 @@ angular.module('meanTrialApp', [
                 controller: 'LicenseCtrl',
 //                authenticate: true
             })
+            .when('/license', {
+                templateUrl: 'partials/license_detail',
+                controller: 'LicenseDetailCtrl',
+//                authenticate: true
+            })
             .when('/package', {
                 templateUrl: 'partials/package',
                 controller: 'PackageCtrl',
 //                authenticate: true
             })
+            .when('/package', {
+                templateUrl: 'partials/package_detail',
+                controller: 'PackageDetailCtrl',
+//                authenticate: true
+            })
             .when('/project', {
                 templateUrl: 'partials/project',
                 controller: 'ProjectCtrl',
+//                authenticate: true
+            })
+            .when('/project', {
+                templateUrl: 'partials/project_detail',
+                controller: 'ProjectDetailCtrl',
 //                authenticate: true
             })
             .otherwise({

@@ -2,14 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b67e727-2086-4062-86ee-691f83bf8df5" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/controllers/api.js" afterPath="$PROJECT_DIR$/lib/controllers/api.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/app.js" afterPath="$PROJECT_DIR$/app/scripts/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/app.ts" afterPath="$PROJECT_DIR$/app/scripts/app.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/index.html" afterPath="$PROJECT_DIR$/app/views/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/main.css" afterPath="$PROJECT_DIR$/app/styles/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/oss.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/oss.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/oss.ts" afterPath="$PROJECT_DIR$/app/scripts/controllers/oss.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/partials/oss_detail.html" afterPath="$PROJECT_DIR$/app/views/partials/oss_detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/controllers/index.js" afterPath="$PROJECT_DIR$/lib/controllers/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/middleware.js" afterPath="$PROJECT_DIR$/lib/middleware.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/controllers/ossdb.js" afterPath="$PROJECT_DIR$/lib/controllers/ossdb.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/models/ossdb.js" afterPath="$PROJECT_DIR$/lib/models/ossdb.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/controllers/ossdb.ts" afterPath="$PROJECT_DIR$/lib/controllers/ossdb.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/models/ossdb.ts" afterPath="$PROJECT_DIR$/lib/models/ossdb.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/routes.js" afterPath="$PROJECT_DIR$/lib/routes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/routes.ts" afterPath="$PROJECT_DIR$/lib/routes.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/controllers/session.js" afterPath="$PROJECT_DIR$/lib/controllers/session.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/models/thing.js" afterPath="$PROJECT_DIR$/lib/models/thing.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/models/user.js" afterPath="$PROJECT_DIR$/lib/models/user.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/controllers/users.js" afterPath="$PROJECT_DIR$/lib/controllers/users.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ossdb2.iws" />
@@ -36,88 +44,38 @@
       <file leaf-file-name="app.ts" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/app.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="14" selection-start="603" selection-end="603" vertical-scroll-proportion="0.0" vertical-offset="39" max-vertical-offset="1196">
+            <state line="58" column="38" selection-start="1928" selection-end="1928" vertical-scroll-proportion="0.0" vertical-offset="312" max-vertical-offset="1391">
+              <folding>
+                <marker date="1395896737107" expanded="true" signature="95:248" placeholder="[...]" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.ts" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/routes.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="36" selection-start="778" selection-end="778" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="624">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="oss.ts" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/oss.ts">
+      <file leaf-file-name="ossdb.ts" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/controllers/ossdb.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="10" selection-start="1781" selection-end="1781" vertical-scroll-proportion="0.0" vertical-offset="142" max-vertical-offset="702">
-              <folding />
+            <state line="33" column="1" selection-start="743" selection-end="743" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="858">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mixins.less" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/bower_components/angular-ui/common/stylesheets/mixins.less">
+      <file leaf-file-name="dummydata.ts" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/config/dummydata.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="208">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/styles/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="105" column="17" selection-start="2027" selection-end="2027" vertical-scroll-proportion="0.0" vertical-offset="935" max-vertical-offset="1456">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="oss_detail.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/partials/oss_detail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="37" selection-start="357" selection-end="357" vertical-scroll-proportion="0.2312253" vertical-offset="0" max-vertical-offset="546">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bower.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bower.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="22" selection-start="138" selection-end="138" vertical-scroll-proportion="-2.3636363" vertical-offset="26" max-vertical-offset="403">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="9" selection-start="3125" selection-end="3125" vertical-scroll-proportion="-16.181818" vertical-offset="489" max-vertical-offset="1131">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="angular.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/bower_components/angular/angular.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="269906">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bower.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/bower_components/angular/bower.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="12" selection-start="84" selection-end="84" vertical-scroll-proportion="-2.3636363" vertical-offset="0" max-vertical-offset="169">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="angular-animate.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/bower_components/angular-animate/angular-animate.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="241" column="25" selection-start="11348" selection-end="11357" vertical-scroll-proportion="0.0" vertical-offset="2954" max-vertical-offset="21047">
+            <state line="34" column="40" selection-start="1271" selection-end="1271" vertical-scroll-proportion="0.43920973" vertical-offset="140" max-vertical-offset="819">
               <folding />
             </state>
           </provider>
@@ -176,17 +134,17 @@
         <option value="$PROJECT_DIR$/app/scripts/controllers/main.ts" />
         <option value="$PROJECT_DIR$/app/views/partials/navbar.html" />
         <option value="$PROJECT_DIR$/app/views/partials/oss.html" />
-        <option value="$PROJECT_DIR$/lib/routes.ts" />
-        <option value="$PROJECT_DIR$/lib/controllers/ossdb.ts" />
-        <option value="$PROJECT_DIR$/lib/models/ossdb.ts" />
         <option value="$PROJECT_DIR$/typings/jugglingdb/jugglingdb.d.ts" />
         <option value="$PROJECT_DIR$/app/views/index.html" />
         <option value="$PROJECT_DIR$/bower.json" />
         <option value="$PROJECT_DIR$/app/bower_components/angular/bower.json" />
-        <option value="$PROJECT_DIR$/app/scripts/app.ts" />
         <option value="$PROJECT_DIR$/app/styles/main.css" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/oss.ts" />
         <option value="$PROJECT_DIR$/app/views/partials/oss_detail.html" />
+        <option value="$PROJECT_DIR$/app/scripts/app.ts" />
+        <option value="$PROJECT_DIR$/lib/routes.ts" />
+        <option value="$PROJECT_DIR$/lib/controllers/ossdb.ts" />
+        <option value="$PROJECT_DIR$/lib/models/ossdb.ts" />
       </list>
     </option>
   </component>
@@ -293,6 +251,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ossdb2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ossdb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ossdb2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ossdb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -311,7 +301,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="scripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -333,25 +323,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app.ts" />
-              <option name="myItemType" value="com.intellij.plugins.watcher.projectView.NestingTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ossdb2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ossdb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
+              <option name="myItemId" value="services" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -580,7 +552,11 @@
       <created>1395891468692</created>
       <updated>1395891468692</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="- ng-grid tried and disabled due to complexity, consider next time&#10;">
+      <created>1395896388900</created>
+      <updated>1395896388900</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -589,14 +565,14 @@
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35105205" sideWeight="0.49964765" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22923589" sideWeight="0.49964765" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2654185" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24118942" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36501902" sideWeight="0.5003524" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.337763" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18551043" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890365" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -641,7 +617,8 @@
     <MESSAGE value="Add License, Package, Project page and combine its api&#10;" />
     <MESSAGE value="- Add fixture relation for test and dummy data creation" />
     <MESSAGE value="- Apply animation on show/hide&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Apply animation on show/hide&#10;" />
+    <MESSAGE value="- ng-grid tried and disabled due to complexity, consider next time&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="- ng-grid tried and disabled due to complexity, consider next time&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -677,11 +654,6 @@
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="22" selection-start="387" selection-end="387" vertical-scroll-proportion="-9.454545" vertical-offset="0" max-vertical-offset="1001" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/config/dummydata.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="14" selection-start="1866" selection-end="1866" vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="832" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/partials/main.html">
@@ -806,18 +778,6 @@
         <state line="31" column="4" selection-start="812" selection-end="839" vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="936" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/routes.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="37" selection-start="819" selection-end="819" vertical-scroll-proportion="0.4549266" vertical-offset="108" max-vertical-offset="585" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/controllers/ossdb.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="36" selection-start="138" selection-end="138" vertical-scroll-proportion="0.0" vertical-offset="43" max-vertical-offset="1508">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/partials/oss.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="0" selection-start="68" selection-end="508" vertical-scroll-proportion="-10.636364" vertical-offset="0" max-vertical-offset="377">
@@ -846,13 +806,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/models/ossdb.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="197" column="21" selection-start="4706" selection-end="4706" vertical-scroll-proportion="0.0" vertical-offset="2085" max-vertical-offset="3042">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/bower_components/angular-bootstrap/bower.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="1" selection-start="259" selection-end="259" vertical-scroll-proportion="0.26052105" vertical-offset="0" max-vertical-offset="499">
@@ -876,7 +829,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bower.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="22" selection-start="138" selection-end="138" vertical-scroll-proportion="-2.3636363" vertical-offset="26" max-vertical-offset="403">
+        <state line="6" column="22" selection-start="138" selection-end="138" vertical-scroll-proportion="0.14471243" vertical-offset="0" max-vertical-offset="539">
           <folding />
         </state>
       </provider>
@@ -890,7 +843,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/bower_components/angular/bower.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="12" selection-start="84" selection-end="84" vertical-scroll-proportion="-2.3636363" vertical-offset="0" max-vertical-offset="169">
+        <state line="4" column="12" selection-start="84" selection-end="84" vertical-scroll-proportion="0.09647495" vertical-offset="0" max-vertical-offset="539">
           <folding />
         </state>
       </provider>
@@ -904,14 +857,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/bower_components/angular-animate/angular-animate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="241" column="25" selection-start="11348" selection-end="11357" vertical-scroll-proportion="0.0" vertical-offset="2954" max-vertical-offset="21047">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="9" selection-start="3125" selection-end="3125" vertical-scroll-proportion="-16.181818" vertical-offset="489" max-vertical-offset="1131">
+        <state line="241" column="25" selection-start="11348" selection-end="11357" vertical-scroll-proportion="0.32664233" vertical-offset="2954" max-vertical-offset="21047">
           <folding />
         </state>
       </provider>
@@ -919,13 +865,6 @@
     <entry file="file://$PROJECT_DIR$/app/styles/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="105" column="17" selection-start="2027" selection-end="2027" vertical-scroll-proportion="0.0" vertical-offset="935" max-vertical-offset="1456">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/app.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="14" selection-start="603" selection-end="603" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1196">
           <folding />
         </state>
       </provider>
@@ -939,7 +878,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/partials/oss_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="37" selection-start="357" selection-end="357" vertical-scroll-proportion="0.2312253" vertical-offset="0" max-vertical-offset="546">
+        <state line="10" column="10" selection-start="433" selection-end="433" vertical-scroll-proportion="0.256917" vertical-offset="0" max-vertical-offset="546">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="9" selection-start="3125" selection-end="3125" vertical-scroll-proportion="0.5849057" vertical-offset="473" max-vertical-offset="1131">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/models/ossdb.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="109" column="38" selection-start="2765" selection-end="2765" vertical-scroll-proportion="-1.3755523" vertical-offset="2351" max-vertical-offset="4719">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/app.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="38" selection-start="1928" selection-end="1928" vertical-scroll-proportion="0.0" vertical-offset="312" max-vertical-offset="1391">
+          <folding>
+            <marker date="1395896737107" expanded="true" signature="95:248" placeholder="[...]" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/routes.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="36" selection-start="778" selection-end="778" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="624">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/controllers/ossdb.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="1" selection-start="743" selection-end="743" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="858">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/config/dummydata.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="40" selection-start="1271" selection-end="1271" vertical-scroll-proportion="0.43920973" vertical-offset="140" max-vertical-offset="819">
           <folding />
         </state>
       </provider>
