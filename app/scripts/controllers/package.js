@@ -7,7 +7,19 @@ angular.module('meanTrialApp').controller('PackageCtrl', function ($scope, $http
 }).controller('PackageDetailCtrl', function ($scope, $http, $routeParams) {
     $http.get('/api/package/' + $routeParams.id).success(function (package) {
         console.log(package);
-        $scope.packageList = package;
+        $scope._package = package;
+        $http.get('/api/license').success(function (licenseList) {
+            console.log(licenseList);
+            console.log(licenseList);
+            var id = package.licenseId;
+            var i, len = licenseList.length, l;
+            for (i = 0; i < len; i++) {
+                l = licenseList[i];
+                if (l.id == id) {
+                    $scope._license = licenseList;
+                }
+            }
+        });
     });
 });
 //# sourceMappingURL=package.js.map

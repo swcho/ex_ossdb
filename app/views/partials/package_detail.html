@@ -1,10 +1,28 @@
 <div ng-include="'partials/navbar'"></div>
 
 <div class="container">
-  <div class="row" ng-repeat="package in packageList">
-      <div class="col-xs-4"><strong>{{package.name}}</strong></div>
-      <div class="col-xs-8"></div>
-  </div>
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" ng-model="_package.name" ng-change="_nameChanged()">
+    </div>
+    <div class="form-group">
+        <label>License</label>
+        <input type="text" class="form-control" ng-model="_license.name" ng-change="_nameChanged()">
+    </div>
+    <table class="table table-condensed table-hover">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Package</th>
+            <th>License</th>
+        </tr>
+        </thead>
+        <tbody ng-repeat="p in _oss.packages">
+        <td>{{p.id}}</td>
+        <td><a href="package/{{p.id}}">{{p.name}}</a></td>
+        <td><a href="license/{{p.licenseId}}" ng-repeat="l in _licenseList | filter:{id:p.licenseId}">{{l.name}}</a></td>
+        </tbody>
+    </table>
 </div>
 
 <div class="footer">

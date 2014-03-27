@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b67e727-2086-4062-86ee-691f83bf8df5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/license.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/license.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/license.ts" afterPath="$PROJECT_DIR$/app/scripts/controllers/license.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/partials/license_detail.html" afterPath="$PROJECT_DIR$/app/views/partials/license_detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/package.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/package.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/package.ts" afterPath="$PROJECT_DIR$/app/scripts/controllers/package.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/partials/package_detail.html" afterPath="$PROJECT_DIR$/app/views/partials/package_detail.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ossdb2.iws" />
@@ -31,16 +31,25 @@
       <file leaf-file-name="oss_detail.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/partials/oss_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="0" selection-start="577" selection-end="1068" vertical-scroll-proportion="-8.272727" vertical-offset="0" max-vertical-offset="546">
+            <state line="28" column="0" selection-start="577" selection-end="1069" vertical-scroll-proportion="-16.545454" vertical-offset="0" max-vertical-offset="546">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="license_detail.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/partials/license_detail.html">
+      <file leaf-file-name="package_detail.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/partials/package_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="24" selection-start="541" selection-end="541" vertical-scroll-proportion="0.28846154" vertical-offset="0" max-vertical-offset="676">
+            <state line="9" column="96" selection-start="393" selection-end="393" vertical-scroll-proportion="-5.318182" vertical-offset="0" max-vertical-offset="468">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.ts" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/package.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="0" selection-start="1056" selection-end="1056" vertical-scroll-proportion="0.5424739" vertical-offset="0" max-vertical-offset="671">
               <folding />
             </state>
           </provider>
@@ -49,7 +58,7 @@
       <file leaf-file-name="license.ts" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/license.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="0" selection-start="769" selection-end="769" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="351">
+            <state line="10" column="24" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="351">
               <folding />
             </state>
           </provider>
@@ -68,7 +77,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/scripts/controllers/settings.ts" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/signup.ts" />
         <option value="$PROJECT_DIR$/app/scripts/directives/mongooseError.ts" />
         <option value="$PROJECT_DIR$/app/scripts/services/auth.ts" />
@@ -110,7 +118,6 @@
         <option value="$PROJECT_DIR$/app/views/partials/oss_detail.html" />
         <option value="$PROJECT_DIR$/lib/routes.ts" />
         <option value="$PROJECT_DIR$/lib/models/ossdb.ts" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/package.ts" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/project.ts" />
         <option value="$PROJECT_DIR$/app/scripts/app.ts" />
         <option value="$PROJECT_DIR$/lib/controllers/ossdb.ts" />
@@ -119,6 +126,8 @@
         <option value="$PROJECT_DIR$/app/views/partials/project.html" />
         <option value="$PROJECT_DIR$/app/views/partials/license_detail.html" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/license.ts" />
+        <option value="$PROJECT_DIR$/app/views/partials/package_detail.html" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/package.ts" />
       </list>
     </option>
   </component>
@@ -266,6 +275,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="partials" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ossdb2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ossdb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ossdb2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ossdb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -488,7 +537,11 @@
       <created>1395899296997</created>
       <updated>1395899296997</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="License detail view">
+      <created>1395904956412</created>
+      <updated>1395904956412</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -497,13 +550,13 @@
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22923589" sideWeight="0.49889868" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22923589" sideWeight="0.49889868" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28414097" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28414097" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18493909" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18493909" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18493909" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890365" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -553,7 +606,8 @@
     <MESSAGE value="Service added for get each item by id&#10;" />
     <MESSAGE value="Add each detailed partial &amp; control" />
     <MESSAGE value="Item listing refined with bootstrap table" />
-    <option name="LAST_COMMIT_MESSAGE" value="Item listing refined with bootstrap table" />
+    <MESSAGE value="License detail view" />
+    <option name="LAST_COMMIT_MESSAGE" value="License detail view" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -768,13 +822,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/partials/package_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="651">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/partials/project_detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="651">
@@ -792,13 +839,6 @@
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/oss.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="32" selection-start="407" selection-end="407" vertical-scroll-proportion="0.22413793" vertical-offset="0" max-vertical-offset="702">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/package.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="62" selection-start="387" selection-end="399" vertical-scroll-proportion="0.19374068" vertical-offset="0" max-vertical-offset="671">
           <folding />
         </state>
       </provider>
@@ -861,23 +901,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/license_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="13" selection-start="584" selection-end="584" vertical-scroll-proportion="-10.045455" vertical-offset="0" max-vertical-offset="468">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/partials/oss_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="577" selection-end="1068" vertical-scroll-proportion="-8.272727" vertical-offset="0" max-vertical-offset="546">
+        <state line="28" column="0" selection-start="577" selection-end="1069" vertical-scroll-proportion="-16.545454" vertical-offset="0" max-vertical-offset="546">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/license.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="769" selection-end="769" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="351">
+        <state line="10" column="24" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="351">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/partials/license_detail.html">
+    <entry file="file://$PROJECT_DIR$/app/views/partials/package_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="24" selection-start="541" selection-end="541" vertical-scroll-proportion="0.28846154" vertical-offset="0" max-vertical-offset="676">
+        <state line="9" column="96" selection-start="393" selection-end="393" vertical-scroll-proportion="-5.318182" vertical-offset="0" max-vertical-offset="468">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/package.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="0" selection-start="1056" selection-end="1056" vertical-scroll-proportion="0.5424739" vertical-offset="0" max-vertical-offset="671">
           <folding />
         </state>
       </provider>
