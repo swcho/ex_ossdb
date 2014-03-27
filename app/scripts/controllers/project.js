@@ -3,4 +3,9 @@ angular.module('meanTrialApp').controller('ProjectCtrl', function ($scope, $http
         console.log(projectList);
         $scope.projectList = projectList;
     });
+}).controller('ProjectDetailCtrl', function ($scope, $http, $routeParams) {
+    $http.get('/api/project/' + $routeParams.id).success(function (project) {
+        console.log(project);
+        $scope.projectList = project;
+    });
 });

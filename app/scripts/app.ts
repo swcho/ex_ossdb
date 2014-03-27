@@ -44,7 +44,7 @@ angular.module('meanTrialApp', [
                 controller: 'LicenseCtrl',
 //                authenticate: true
             })
-            .when('/license', {
+            .when('/license/:id', {
                 templateUrl: 'partials/license_detail',
                 controller: 'LicenseDetailCtrl',
 //                authenticate: true
@@ -54,7 +54,7 @@ angular.module('meanTrialApp', [
                 controller: 'PackageCtrl',
 //                authenticate: true
             })
-            .when('/package', {
+            .when('/package/:id', {
                 templateUrl: 'partials/package_detail',
                 controller: 'PackageDetailCtrl',
 //                authenticate: true
@@ -64,7 +64,7 @@ angular.module('meanTrialApp', [
                 controller: 'ProjectCtrl',
 //                authenticate: true
             })
-            .when('/project', {
+            .when('/project/:id', {
                 templateUrl: 'partials/project_detail',
                 controller: 'ProjectDetailCtrl',
 //                authenticate: true

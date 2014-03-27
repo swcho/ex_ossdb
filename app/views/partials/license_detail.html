@@ -1,0 +1,12 @@
+<div ng-include="'partials/navbar'"></div>
+
+<div class="container">
+  <div class="row" ng-repeat="license in licenseList">
+      <div class="col-xs-4"><strong>{{license.name}}</strong></div>
+      <div class="col-xs-8">{{license.type}}</div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>by Quality Planning Team</p>
+</div>

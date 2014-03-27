@@ -7,4 +7,10 @@ angular.module('meanTrialApp')
             console.log(projectList);
             $scope.projectList = projectList;
         });
+    })
+    .controller('ProjectDetailCtrl', function ($scope, $http, $routeParams) {
+        $http.get('/api/project/' + $routeParams.id).success(function(project) {
+            console.log(project);
+            $scope.projectList = project;
+        });
     });

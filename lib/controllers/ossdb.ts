@@ -53,7 +53,7 @@ export function get_project(req, res) {
             res.json(project);
         });
     } else {
-        ossdb.get_package_all((projectList) => {
+        ossdb.get_project_all((projectList) => {
             res.json(projectList);
         });
     }
