@@ -1,12 +1,22 @@
 <div ng-include="'partials/navbar'"></div>
 
 <div class="container">
-  <div class="row" ng-repeat="license in licenseList">
-      <div class="col-xs-4"><strong>{{license.name}}</strong></div>
-      <div class="col-xs-8">{{license.type}}</div>
-  </div>
+    <table class="table table-condensed table-hover">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Type</th>
+        </tr>
+        </thead>
+        <tbody ng-repeat="license in licenseList">
+        <td>{{license.id}}</td>
+        <td><a href="license/{{license.id}}">{{license.name}}</a></td>
+        <td>{{license.type}}</td>
+        </tbody>
+    </table>
 </div>
 
 <div class="footer">
-  <p>by Quality Planning Team</p>
+    <p>by Quality Planning Team</p>
 </div>

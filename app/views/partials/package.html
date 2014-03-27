@@ -1,12 +1,24 @@
 <div ng-include="'partials/navbar'"></div>
 
 <div class="container">
-  <div class="row" ng-repeat="package in packageList">
-      <div class="col-xs-4"><strong>{{package.name}}</strong></div>
-      <div class="col-xs-8"></div>
-  </div>
+    <table class="table table-condensed table-hover">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>OSS</th>
+            <th>License</th>
+        </tr>
+        </thead>
+        <tbody ng-repeat="package in packageList">
+        <td>{{package.id}}</td>
+        <td><a href="package/{{package.id}}">{{package.name}}</a></td>
+        <td>{{package.ossId}}</td>
+        <td>{{package.licenseId}}</td>
+        </tbody>
+    </table>
 </div>
 
 <div class="footer">
-  <p>by Quality Planning Team</p>
+    <p>by Quality Planning Team</p>
 </div>
