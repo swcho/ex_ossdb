@@ -11,6 +11,10 @@ angular.module('meanTrialApp')
     .controller('ProjectDetailCtrl', function ($scope, $http, $routeParams) {
         $http.get('/api/project/' + $routeParams.id).success(function(project) {
             console.log(project);
-            $scope.projectList = project;
+            $http.get('/api/license').success(function(licenseList) {
+                console.log(licenseList);
+                $scope._project = project;
+                $scope._licenseList = licenseList;
+            });
         });
     });

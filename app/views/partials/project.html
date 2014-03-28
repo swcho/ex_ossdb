@@ -6,11 +6,13 @@
         <tr>
             <th>ID</th>
             <th>Project ID</th>
+            <th>Package Usage Count</th>
         </tr>
         </thead>
         <tbody ng-repeat="project in projectList">
             <td>{{project.id}}</td>
             <td><a href="project/{{project.id}}">{{project.projectId}}</a></td>
+            <td>{{project.packages.length}}</td>
         </tbody>
     </table>
 </div>

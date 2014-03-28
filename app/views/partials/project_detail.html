@@ -1,12 +1,26 @@
 <div ng-include="'partials/navbar'"></div>
 
 <div class="container">
-  <div class="row" ng-repeat="project in projectList">
-      <div class="col-xs-4"><strong>{{project.projectId}}</strong></div>
-      <div class="col-xs-8"></div>
-  </div>
+    <div class="form-group">
+        <label>Project ID</label>
+        <input type="text" id="name" class="form-control" ng-model="_project.projectId" ng-change="_nameChanged()">
+    </div>
+    <table class="table table-condensed table-hover">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Package</th>
+            <th>License</th>
+        </tr>
+        </thead>
+        <tbody ng-repeat="p in _project.packages">
+        <td>{{p.id}}</td>
+        <td><a href="package/{{p.id}}">{{p.name}}</a></td>
+        <td><a href="license/{{p.licenseId}}" ng-repeat="l in _licenseList | filter:{id:p.licenseId}">{{l.name}}</a></td>
+        </tbody>
+    </table>
 </div>
 
 <div class="footer">
-  <p>by Quality Planning Team</p>
+    <p>by Quality Planning Team</p>
 </div>
