@@ -11,16 +11,16 @@ angular.module('meanTrialApp')
     .controller('PackageDetailCtrl', function ($scope, $http, $routeParams) {
         $http.get('/api/package/' + $routeParams.id).success(function(package) {
             console.log(package);
-            $scope._package = package;
             $http.get('/api/license').success(function(licenseList) {
-                console.log(licenseList);
                 console.log(licenseList);
                 var id = package.licenseId;
                 var i, len = licenseList.length, l;
                 for (i=0; i<len; i++) {
                     l = licenseList[i];
                     if (l.id == id) {
-                        $scope._license = licenseList;
+                        console.log(l);
+                        $scope._package = package;
+                        $scope._license = l;
                     }
                 }
             });

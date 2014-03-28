@@ -47,5 +47,12 @@ describe('ossdb functions', function() {
                 done();
             });
         });
-    })
+    });
+
+    it('get_package', (done) => {
+        ossdb.get_package_by_id(1, (package) => {
+            console.log(package);
+            done();
+        });
+    });
 });

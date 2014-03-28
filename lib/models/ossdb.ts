@@ -30,6 +30,10 @@ export interface TPackage {
     name: string;
     getUsages?: Function;
     projects?: TProject[];
+    licenseId?: string;
+    ossId?: string;
+    license?: TLicense;
+    oss?: TOss;
 }
 
 export interface TProject {
@@ -264,31 +268,37 @@ export function get_license_all(aCb: (licenseList: any) => void) {
     });
 }
 
-function populate_project(aPackage: TPackage, aCb) {
-    aPackage.getUsages((err, usages) => {
-        var projects = [];
-        var series = [];
-        usages.forEach((usage) => {
-            series.push((cb) => {
-                Project.find(usage.projectId, (err, project) => {
-                    console.log(project);
-                    projects.push(project);
+function populate_package(aPackage: TPackage, aCb) {
+    Oss.find(aPackage.ossId, (err, oss) => {
+        aPackage.oss = oss;
+        License.find(aPackage.licenseId, (err, license) => {
+            aPackage.license = license;
+            aPackage.getUsages((err, usages) => {
+                var projects = [];
+                var series = [];
+                usages.forEach((usage) => {
+                    series.push((cb) => {
+                        Project.find(usage.projectId, (err, project) => {
+                            console.log(project);
+                            projects.push(project);
+                            cb();
+                        });
+                    })
+                });
+                series.push((cb) => {
+                    aPackage.projects = projects;
+                    aCb();
                     cb();
                 });
-            })
-        });
-        series.push((cb) => {
-            aPackage.projects = projects;
-            aCb();
-            cb();
-        });
-        async.series(series);
+                async.series(series);
+            });
+        })
     });
 }
 
 export function get_package_by_id(aId, aCb: (package: any) => void) {
     Package.find(aId, (err, package) => {
-        populate_project(package, () => {
+        populate_package(package, () => {
             aCb(package);
         });
     })
@@ -299,7 +309,7 @@ export function get_package_all(aCb: (package: any) => void) {
         var s = [];
         packageList.forEach((package) => {
             s.push((cb) => {
-                populate_project(package, cb);
+                populate_package(package, cb);
             });
         });
         s.push((cb) => {
@@ -311,7 +321,7 @@ export function get_package_all(aCb: (package: any) => void) {
     });
 }
 
-function populate_packages(aProject: TProject, aCb) {
+function populate_project(aProject: TProject, aCb) {
     aProject.getUsages((err, usages) => {
         var packages = [];
         var series = [];
@@ -334,7 +344,7 @@ function populate_packages(aProject: TProject, aCb) {
 
 export function get_project_by_id(aId, aCb: (project: any) => void) {
     Project.find(aId, (err, project) => {
-        populate_packages(project, () => {
+        populate_project(project, () => {
             aCb(project);
         });
     });
@@ -345,7 +355,7 @@ export function get_project_all(aCb: (projectList: any) => void) {
         var s = [];
         projectList.forEach((project) => {
             s.push((cb) => {
-                populate_packages(project, cb);
+                populate_project(project, cb);
             });
         });
         s.push((cb) => {

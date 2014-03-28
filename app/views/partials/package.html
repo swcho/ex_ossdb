@@ -8,13 +8,15 @@
             <th>Name</th>
             <th>OSS</th>
             <th>License</th>
+            <th>License Type</th>
         </tr>
         </thead>
         <tbody ng-repeat="package in packageList">
         <td>{{package.id}}</td>
         <td><a href="package/{{package.id}}">{{package.name}}</a></td>
-        <td>{{package.ossId}}</td>
-        <td>{{package.licenseId}}</td>
+        <td>{{package.oss.name}}</td>
+        <td>{{package.license.name}}</td>
+        <td>{{package.license.type}}</td>
         </tbody>
     </table>
 </div>
