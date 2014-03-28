@@ -67,10 +67,10 @@ declare module 'jugglingdb' {
 
     export interface TModelAllParams {
         where: { [key: string]: any; }; // Object { key: val, key2: {gt: 'val2'}}
-        include: any; // String, Object or Array. See AbstractClass.include documentation.
-        order: string;
-        limit: number;
-        skip: number;
+        include?: any; // String, Object or Array. See AbstractClass.include documentation.
+        order?: string;
+        limit?: number;
+        skip?: number;
     }
 
     export class Model<T> {
@@ -145,6 +145,8 @@ declare module 'jugglingdb' {
          * Find instance by id. Invoke callback when ready. Callback accepts two arguments: error and model instance.
          */
         find(id, callback: (err, item: T) => void);
+
+        findOne(params: TModelAllParams, callback: (err, item: T) => void);
 
         /*
          * Find all instances of Model, matched by query.

@@ -175,9 +175,8 @@ export function set_fixture(done) {
         var s = [];
         newPackages.forEach((p, i) => {
             s.push((cb) => {
-                console.log('set package relation');
                 p.updateAttributes(fit_relation_package[i], cb);
-            })
+            });
         });
         s.push(() => {
             cb();
@@ -304,20 +303,34 @@ export function get_package_by_id(aId, aCb: (package: any) => void) {
     })
 }
 
-export function get_package_all(aCb: (package: any) => void) {
+export function get_package_by_name(aName, aCb: (package: any) => void) {
+    Package.findOne({
+        where: {
+            name: aName
+        }
+    }, (err, package) => {
+        aCb(package);
+    });
+}
+
+export function get_package_all(aCb: (package: any) => void, aDoNotPopulate?: boolean) {
     Package.all((err, packageList) => {
-        var s = [];
-        packageList.forEach((package) => {
-            s.push((cb) => {
-                populate_package(package, cb);
-            });
-        });
-        s.push((cb) => {
-            console.log(packageList);
+        if (aDoNotPopulate) {
             aCb(packageList);
-            cb();
-        });
-        async.series(s);
+        } else {
+            var s = [];
+            packageList.forEach((package) => {
+                s.push((cb) => {
+                    populate_package(package, cb);
+                });
+            });
+            s.push((cb) => {
+                console.log(packageList);
+                aCb(packageList);
+                cb();
+            });
+            async.series(s);
+        }
     });
 }
 
@@ -350,6 +363,22 @@ export function get_project_by_id(aId, aCb: (project: any) => void) {
     });
 }
 
+export function get_project_by_projectId(aProjectId, aCb: (project: any) => void) {
+    Project.findOne({
+        where: {
+            projectId: aProjectId
+        }
+    }, (err, project) => {
+        if (project) {
+            populate_project(project, () => {
+                aCb(project);
+            });
+        } else {
+            aCb(null);
+        }
+    });
+}
+
 export function get_project_all(aCb: (projectList: any) => void) {
     Project.all((err, projectList) => {
         var s = [];
@@ -364,4 +393,124 @@ export function get_project_all(aCb: (projectList: any) => void) {
         });
         async.series(s);
     });
+}
+
+export interface TSetProjectWithPackagesParam {
+    projectId: string;
+    packageNames: string[];
+}
+
+export interface TSetProjectWithPackagesResp {
+    ok: boolean;
+    projectAdded: boolean;
+    projectUpdated: boolean;
+    packageNamesCreated: string[];
+    packageNamesAdded: string[];
+    packageNamesRemoved: string[];
+}
+
+export function SetProjectWithPackages(aParam: TSetProjectWithPackagesParam, aCb: (aResp: TSetProjectWithPackagesResp) => void) {
+    var packagesByName = {};
+    var project;
+    var newProject;
+    var resp = {
+        ok: false,
+        projectAdded: false,
+        projectUpdated: false,
+        packageNamesCreated: [],
+        packageNamesAdded: [],
+        packageNamesRemoved: []
+    };
+
+    var series = [];
+
+    // get packages
+    series.push((cb) => {
+        get_package_all((packageList) => {
+            packageList.forEach((p) => {
+                packagesByName[p.name] = p;
+            });
+            cb();
+        }, true);
+    });
+
+    // get previous project item
+    series.push((cb) => {
+        get_project_by_projectId(aParam.projectId, (project) => {
+            project = project;
+            console.log('get previous project item: ' + project);
+            cb();
+        });
+    });
+
+    // add new project if previous project item does not exist
+    series.push((cb) => {
+        if (!project) {
+            console.log('set new project if previous project item does not exist');
+            Project.create({
+                projectId: aParam.projectId
+            }, (err, project) => {
+                newProject = project;
+                resp.projectAdded = true;
+                cb();
+            });
+        } else {
+            cb();
+        }
+    });
+
+    // set packages
+    series.push((cb) => {
+        var newPackages: TPackage[] = [];
+        var newPackageNames: string[] = [];
+        var packageNames = Object.keys(packagesByName);
+        aParam.packageNames.forEach((name) => {
+            if (packageNames.indexOf(name) == -1) {
+                newPackages.push({
+                    name: name
+                });
+                newPackageNames.push(name);
+            }
+        });
+        Package.create(newPackages, (err) => {
+            console.log('set packages');
+            resp.packageNamesCreated = newPackageNames;
+
+            // update package list
+            get_package_all((packageList) => {
+                packageList.forEach((p) => {
+                    packagesByName[p.name] = p;
+                });
+                cb();
+            }, true);
+        });
+    });
+
+    // add packages to project
+    series.push((cb) => {
+        if (project) {
+            cb();
+        } else {
+            var usages = [];
+            aParam.packageNames.forEach((name) => {
+                usages.push({
+                    projectId: newProject.id,
+                    packageId: packagesByName[name].id
+                });
+                resp.packageNamesAdded.push(name);
+            });
+            PackageUsage.create(usages, () => {
+                cb();
+            });
+        }
+    });
+
+    // finalize
+    series.push((cb) => {
+        resp.ok = true;
+        aCb(resp);
+        cb();
+    });
+
+    async.series(series);
 }
