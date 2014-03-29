@@ -1,4 +1,3 @@
-/// <reference path="../../../typings/angularjs/angular.d.ts" />
 angular.module('meanTrialApp').controller('LicenseCtrl', function ($scope, $http) {
     $http.get('/api/license').success(function (licenseList) {
         console.log(licenseList);
@@ -15,4 +14,3 @@ angular.module('meanTrialApp').controller('LicenseCtrl', function ($scope, $http
         $scope._ossList = ossList;
     });
 });
-//# sourceMappingURL=license.js.map

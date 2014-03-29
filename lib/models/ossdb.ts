@@ -8,7 +8,8 @@ import jugglingdb = require('jugglingdb');
 import async = require('async');
 
 export var db = new jugglingdb.Schema('sqlite3', {
-    database: 'ossdb.sqlite3',
+//    database: 'ossdb.sqlite3',
+    database: ':memory:',
     debug: true
 });
 
@@ -145,33 +146,41 @@ export function set_fixture(done) {
     var newPackages;
     var newProject;
     series.push((cb) => {
+        console.log('1');
         db.automigrate(cb);
     });
     series.push((cb) => {
+        console.log('2');
         Oss.create(fit_Oss, (err, model) => {
+            console.log(err);
+            console.log(model);
             newOss = model;
             cb();
         });
     });
     series.push((cb) => {
+        console.log('3');
         License.create(fit_license, (err, model) => {
             newLicense = model;
             cb();
         });
     });
     series.push((cb) => {
+        console.log('4');
         Package.create(fit_package, (err, model) => {
             newPackages = model;
             cb();
         });
     });
     series.push((cb) => {
+        console.log('5');
         Project.create(fit_project, (err, model) => {
             newProject = model;
             cb();
         });
     });
     series.push((cb) => {
+        console.log('6');
         var s = [];
         newPackages.forEach((p, i) => {
             s.push((cb) => {
@@ -184,6 +193,7 @@ export function set_fixture(done) {
         async.series(s);
     });
     series.push((cb) => {
+        console.log('7');
         var s = [];
         fit_relation_packageUsage.forEach((usage) => {
             var newUsage = PackageUsage.create({
@@ -436,9 +446,10 @@ export function SetProjectWithPackages(aParam: TSetProjectWithPackagesParam, aCb
 
     // get previous project item
     series.push((cb) => {
-        get_project_by_projectId(aParam.projectId, (project) => {
-            project = project;
-            console.log('get previous project item: ' + project);
+        get_project_by_projectId(aParam.projectId, (p) => {
+            project = p;
+            console.log('get previous project item');
+            console.log(p);
             cb();
         });
     });
@@ -449,8 +460,9 @@ export function SetProjectWithPackages(aParam: TSetProjectWithPackagesParam, aCb
             console.log('set new project if previous project item does not exist');
             Project.create({
                 projectId: aParam.projectId
-            }, (err, project) => {
-                newProject = project;
+            }, (err, p) => {
+                newProject = p;
+                console.log(p);
                 resp.projectAdded = true;
                 cb();
             });
@@ -489,7 +501,61 @@ export function SetProjectWithPackages(aParam: TSetProjectWithPackagesParam, aCb
     // add packages to project
     series.push((cb) => {
         if (project) {
-            cb();
+            if (project.packages) {
+                console.log('has packages');
+                console.log(project.packages);
+
+                var packageNames = [];
+                project.packages.forEach((p) => {
+                    packageNames.push(p.name);
+                });
+
+                var usagesToBeAdded = [];
+                var requestedPackageNames = [];
+                aParam.packageNames.forEach((name) => {
+                    usagesToBeAdded.push({
+                        projectId: project.id,
+                        packageId: packagesByName[name].id
+                    });
+                    if (packageNames.indexOf(name) == -1) {
+//                        usagesToBeAdded.push({
+//                            projectId: newProject.id,
+//                            packageId: packagesByName[name].id
+//                        });
+                        resp.packageNamesAdded.push(name);
+                    }
+                    requestedPackageNames.push(name);
+                });
+
+//                var usagesToBeRemoved = [];
+                project.packages.forEach((p) => {
+                    if (requestedPackageNames.indexOf(p.name) == -1) {
+//                        usagesToBeRemoved.push(p.id);
+                        resp.packageNamesRemoved.push(p.name);
+                    }
+                });
+
+                PackageUsage.all({
+                    where: {
+                        projectId: project.id
+                    }
+                },(err, usages) => {
+                    console.log(err);
+                    console.log(usages);
+                    console.log(typeof usages);
+//                    (<any>usages).destroyAll(() => {
+                    PackageUsage.destroyAll(() => {
+                        PackageUsage.create(usagesToBeAdded, (err, usages) => {
+                            console.log('Usages');
+                            console.log(usages);
+                            cb();
+                        });
+                    });
+                });
+                resp.projectUpdated = true;
+            } else {
+                cb();
+            }
         } else {
             var usages = [];
             aParam.packageNames.forEach((name) => {
@@ -499,7 +565,9 @@ export function SetProjectWithPackages(aParam: TSetProjectWithPackagesParam, aCb
                 });
                 resp.packageNamesAdded.push(name);
             });
-            PackageUsage.create(usages, () => {
+            PackageUsage.create(usages, (err, usages) => {
+                console.log('Usages');
+                console.log(usages);
                 cb();
             });
         }

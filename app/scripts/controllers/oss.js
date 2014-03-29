@@ -1,4 +1,3 @@
-/// <reference path="../../../typings/angularjs/angular.d.ts" />
 angular.module('meanTrialApp').controller('OssCtrl', function ($scope, $http) {
     $http.get('/api/oss').success(function (ossList) {
         console.log(ossList);
@@ -40,4 +39,3 @@ angular.module('meanTrialApp').controller('OssCtrl', function ($scope, $http) {
             { field: 'licenseId', displayName: 'License', cellTemplate: '{{_licenseList[licenseId]}}' }]
     };
 });
-//# sourceMappingURL=oss.js.map

@@ -1,63 +1,17 @@
-/**
- * Created by sungwoo on 14. 3. 25.
- */
-
-/// <reference path="../../../typings/node/node.d.ts" />
-/// <reference path="../../../typings/mocha/mocha.d.ts" />
-/// <reference path="../../../typings/async/async.d.ts" />
-/// <reference path="../../../typings/should/should.d.ts" />
-/// <reference path="../../../typings/supertest/supertest.d.ts" />
-
-import async = require('async');
-import request = require('supertest');
+var async = require('async');
+var request = require('supertest');
 var should = require('should');
 
-import ossdb = require('../../../lib/models/ossdb');
+var ossdb = require('../../../lib/models/ossdb');
 
-describe('ossdb functions', function() {
-
+describe('ossdb functions', function () {
     var fit;
-    before((done) => {
+    before(function (done) {
         console.log('set_fixture');
         fit = ossdb.set_fixture(done);
     });
 
-//    it('Oss should have OpenSSL', (done) => {
-//        ossdb.Oss.count((err, count) => {
-//            (<any>count).should.be.exactly(fit.oss.length);
-//            done();
-//        });
-//    });
-
-//    it('Oss should have one package', (done) => {
-//        ossdb.Oss.all((err, model) => {
-//            var oss = model[0];
-//            console.log(oss);
-//            oss.packages((err, packages) => {
-//                console.log(packages);
-//                done();
-//            });
-//        });
-//    });
-//
-//    it('Project has one package', (done) => {
-//        ossdb.Project.all((err, model) => {
-//            var project = model[0];
-//            project.packages((err, packages) => {
-//                console.log(packages);
-//                done();
-//            });
-//        });
-//    });
-//
-//    it('get_package', (done) => {
-//        ossdb.get_package_by_id(1, (package) => {
-//            console.log(package);
-//            done();
-//        });
-//    });
-
-    it('------ set project package #1', (done) => {
+    it('------ set project package #1', function (done) {
         ossdb.SetProjectWithPackages({
             projectId: 'project_new',
             packageNames: [
@@ -67,7 +21,7 @@ describe('ossdb functions', function() {
                 'libsqlite3.so.0.8.6',
                 'libopenssl.1.0.2.so'
             ]
-        }, (resp) => {
+        }, function (resp) {
             console.log(resp);
             should(resp.ok).be.exactly(true);
             should(resp.projectAdded).be.exactly(true);
@@ -77,7 +31,6 @@ describe('ossdb functions', function() {
                 'libgcc_s.so.1',
                 'libpthread-0.9.32.so',
                 'libsqlite3.so.0.8.6'
-                //'libopenssl.1.0.2.so'
             ]);
             should(resp.packageNamesAdded).be.eql([
                 'libcrypt-0.9.32.so',
@@ -91,18 +44,17 @@ describe('ossdb functions', function() {
         });
     });
 
-    it('------ set project package #2', (done) => {
+    it('------ set project package #2', function (done) {
         ossdb.SetProjectWithPackages({
             projectId: 'project_new',
             packageNames: [
                 'libcrypt-0.9.32.so',
                 'libgcc_s.so.1',
                 'libpthread-0.9.32.so',
-                //'libsqlite3.so.0.8.6', // removed
                 'libopenssl.1.0.2.so',
-                'libuClibc-0.9.32.so' // added
+                'libuClibc-0.9.32.so'
             ]
-        }, (resp) => {
+        }, function (resp) {
             console.log(resp);
             should(resp.ok).be.exactly(true);
             should(resp.projectAdded).be.exactly(false);
