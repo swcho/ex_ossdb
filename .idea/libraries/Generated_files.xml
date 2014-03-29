@@ -5,12 +5,14 @@
         <item url="file://$PROJECT_DIR$/app/scripts/controllers/license.js" />
         <item url="file://$PROJECT_DIR$/lib/models/ossdb.js" />
         <item url="file://$PROJECT_DIR$/app/scripts/controllers/project.js" />
-        <item url="file://$PROJECT_DIR$/app/scripts/app.js" />
         <item url="file://$PROJECT_DIR$/app/scripts/controllers/package.js" />
+        <item url="file://$PROJECT_DIR$/app/scripts/app.js" />
         <item url="file://$PROJECT_DIR$/test/server/ossdb/test_db.js" />
         <item url="file://$PROJECT_DIR$/lib/controllers/ossdb.js" />
+        <item url="file://$PROJECT_DIR$/app/scripts/controllers/main.js" />
         <item url="file://$PROJECT_DIR$/app/scripts/controllers/oss.js" />
         <item url="file://$PROJECT_DIR$/lib/models/model.js" />
+        <item url="file://$PROJECT_DIR$/lib/routes.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
@@ -18,11 +20,13 @@
       <root url="file://$PROJECT_DIR$/lib/models/ossdb.js" />
       <root url="file://$PROJECT_DIR$/app/scripts/controllers/project.js" />
       <root url="file://$PROJECT_DIR$/test/server/ossdb/test_db.js" />
-      <root url="file://$PROJECT_DIR$/app/scripts/controllers/package.js" />
       <root url="file://$PROJECT_DIR$/app/scripts/app.js" />
+      <root url="file://$PROJECT_DIR$/app/scripts/controllers/package.js" />
       <root url="file://$PROJECT_DIR$/lib/controllers/ossdb.js" />
+      <root url="file://$PROJECT_DIR$/app/scripts/controllers/main.js" />
       <root url="file://$PROJECT_DIR$/app/scripts/controllers/oss.js" />
       <root url="file://$PROJECT_DIR$/lib/models/model.js" />
+      <root url="file://$PROJECT_DIR$/lib/routes.js" />
     </CLASSES>
     <SOURCES />
   </library>

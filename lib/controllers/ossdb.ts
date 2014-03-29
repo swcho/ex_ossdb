@@ -59,6 +59,8 @@ export function get_project(req, res) {
     }
 }
 
-export function set_project_package_usage(req, res) {
-
+export function SetProjectWithPackages(req, res) {
+    ossdb.SetProjectWithPackages(req.body, (resp) => {
+        res.json(resp);
+    });
 }
