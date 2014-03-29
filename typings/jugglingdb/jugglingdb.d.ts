@@ -152,7 +152,7 @@ declare module 'jugglingdb' {
          * Find all instances of Model, matched by query.
          * Fields used for filter and sort should be declared with {index: true} in model definition.
          */
-        all(params: TModelAllParams, callback: (err, array: T[]) => void);
+        all(params: TModelAllParams, callback: (err, array: Model<T>[]) => void);
         all(callback: (err, array: any[]) => void);
 
         /*

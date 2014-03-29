@@ -18,7 +18,7 @@ describe('ossdb functions', function() {
 
     var fit;
     before((done) => {
-        console.log('set_fixture');
+        this.timeout(6000);
         fit = ossdb.set_fixture(done);
     });
 

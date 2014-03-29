@@ -7,11 +7,14 @@
 import jugglingdb = require('jugglingdb');
 import async = require('async');
 
+console.log(process.cwd());
 export var db = new jugglingdb.Schema('sqlite3', {
-//    database: 'ossdb.sqlite3',
-    database: ':memory:',
+    database: './ossdb.sqlite3',
+//    database: ':memory:',
     debug: true
 });
+
+db['log'] = function (a) { console.log(a); };
 
 export interface TOss {
     name: string;
@@ -543,14 +546,25 @@ export function SetProjectWithPackages(aParam: TSetProjectWithPackagesParam, aCb
                     console.log(err);
                     console.log(usages);
                     console.log(typeof usages);
-//                    (<any>usages).destroyAll(() => {
-                    PackageUsage.destroyAll(() => {
+
+                    var series = [];
+                    usages.forEach((u) => {
+                        series.push((cb) => {
+                            u.destroy(cb);
+                        });
+                    });
+                    series.push((cb) => {
                         PackageUsage.create(usagesToBeAdded, (err, usages) => {
                             console.log('Usages');
                             console.log(usages);
                             cb();
                         });
                     });
+                    series.push((cb2) => {
+                        cb2();
+                        cb();
+                    });
+                    async.series(series);
                 });
                 resp.projectUpdated = true;
             } else {
