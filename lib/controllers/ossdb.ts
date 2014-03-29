@@ -20,6 +20,21 @@ export function get_oss(req, res) {
     }
 }
 
+export function set_oss(req, res) {
+    var id = req.params['id'];
+    var oss = req.body;
+    if (id) {
+        oss.id = id;
+        ossdb.set_oss(oss, (newOss) => {
+            res.json(newOss);
+        });
+    } else {
+        ossdb.set_oss(oss, (newOss) => {
+            res.json(newOss);
+        });
+    }
+}
+
 export function get_license(req, res) {
     var id = req.params['id'];
     if (id) {

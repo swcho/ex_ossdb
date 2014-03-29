@@ -1,21 +1,22 @@
 <div ng-include="'partials/navbar'"></div>
 
-<div class="container">
-    <table class="table table-condensed table-hover">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Project Home</th>
-        </tr>
-        </thead>
-        <tbody ng-repeat="oss in ossList">
-            <td>{{oss.id}}</td>
-            <td><a href="oss/{{oss.id}}">{{oss.name}}</a></td>
-            <td><a href="{{oss.projectUrl}}">{{oss.projectUrl}}</a></td>
-        </tbody>
+<table class="table table-condensed table-hover">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Project Home</th>
+    </tr>
+    </thead>
+    <tbody ng-repeat="oss in ossList">
+    <td>{{oss.id}}</td>
+    <td><a href="oss/{{oss.id}}">{{oss.name}}</a></td>
+    <td><a href="{{oss.projectUrl}}">{{oss.projectUrl}}</a></td>
+    </tbody>
 
-    </table>
+</table>
+<div class="btn-group">
+<a class="btn btn-primary pull-right" href="oss/new">Add</a>
 </div>
 
 <div ng-include="'partials/footer'"></div>

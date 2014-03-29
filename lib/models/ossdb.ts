@@ -252,6 +252,12 @@ export function get_oss_all(aCb: (ossList: any) => void) {
     });
 }
 
+export function set_oss(aOss: any, aCb: (oss: any) => void) {
+    Oss.upsert(aOss, (err, oss) => {
+        aCb(oss);
+    });
+}
+
 export function get_license_by_id(aId, aCb: (license: any) => void) {
     License.find(aId, (err, license) => {
         license.getPackages((err, packages) => {

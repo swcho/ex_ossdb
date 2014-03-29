@@ -23,7 +23,10 @@ module.exports = function(app) {
     app.del('/api/session', session.logout);
 
     app.get('/api/oss', ossdb.get_oss);
+    app.post('/api/oss/new', ossdb.set_oss);
     app.get('/api/oss/:id', ossdb.get_oss);
+    app.post('/api/oss/:id', ossdb.set_oss);
+
     app.get('/api/license', ossdb.get_license);
     app.get('/api/license/:id', ossdb.get_license);
     app.get('/api/package', ossdb.get_package);

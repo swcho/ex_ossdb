@@ -34,6 +34,11 @@ angular.module('meanTrialApp', [
                 controller: 'OssCtrl',
 //                authenticate: true
             })
+            .when('/oss/new', {
+                templateUrl: 'partials/oss_detail',
+                controller: 'OssNewCtrl',
+//                authenticate: true
+            })
             .when('/oss/:id', {
                 templateUrl: 'partials/oss_detail',
                 controller: 'OssDetailCtrl',
