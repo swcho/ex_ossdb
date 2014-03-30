@@ -20,6 +20,7 @@
         <item url="file://$PROJECT_DIR$/app/scripts/controllers/main.js" />
         <item url="file://$PROJECT_DIR$/app/scripts/controllers/license.js" />
         <item url="file://$PROJECT_DIR$/lib/controllers/api.js" />
+        <item url="file://$PROJECT_DIR$/lib/models/user.js" />
         <item url="file://$PROJECT_DIR$/app/scripts/controllers/project.js" />
       </sourceFilesUrls>
     </properties>
@@ -43,6 +44,7 @@
       <root url="file://$PROJECT_DIR$/app/scripts/controllers/license.js" />
       <root url="file://$PROJECT_DIR$/lib/controllers/api.js" />
       <root url="file://$PROJECT_DIR$/app/scripts/controllers/project.js" />
+      <root url="file://$PROJECT_DIR$/lib/models/user.js" />
     </CLASSES>
     <SOURCES />
   </library>

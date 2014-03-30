@@ -1,8 +1,11 @@
 /// <reference path="../../typings/node/node.d.ts" />
 /// <reference path="../../typings/mongoose/mongoose.d.ts" />
+/// <reference path="../../typings/jugglingdb/jugglingdb.d.ts" />
 
 import mongoose = require('mongoose');
 import crypto = require('crypto');
+
+import jugglingdb = require('jugglingdb');
 
 var Schema = mongoose.Schema;
 var authTypes = ['github', 'twitter', 'facebook', 'google'];
