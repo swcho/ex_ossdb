@@ -7,14 +7,8 @@
 import jugglingdb = require('jugglingdb');
 import async = require('async');
 
+var db: jugglingdb.Schema = jugglingdb['db'];
 console.log(process.cwd());
-export var db = new jugglingdb.Schema('sqlite3', {
-    database: './ossdb.sqlite3',
-//    database: ':memory:',
-    debug: true
-});
-
-db['log'] = function (a) { console.log(a); };
 
 export interface TOss {
     name: string;

@@ -1,7 +1,7 @@
 /// <reference path="../../typings/node/node.d.ts" />
-/// <reference path="../../typings/mongoose/mongoose.d.ts" />
+// <reference path="../../typings/mongoose/mongoose.d.ts" />
 
-import mongoose = require('mongoose');
+//import mongoose = require('mongoose');
 var passport = require('passport');
 
 /**
