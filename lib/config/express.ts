@@ -5,7 +5,7 @@ import express = require('express');
 import path = require('path');
 var config = require('./config');
 var passport = require('passport');
-var mongoStore = require('connect-mongo')(express);
+//var mongoStore = require('connect-mongo')(express);
 
 /**
  * Express configuration
@@ -47,12 +47,14 @@ module.exports = function(app) {
         // Persist sessions with mongoStore
         app.use(express.session({
             secret: 'angular-fullstack secret',
+            /*
             store: new mongoStore({
                 url: config.mongo.uri,
                 collection: 'sessions'
             }, function () {
                 console.log("db connection open");
             })
+            */
         }));
 
         //use passport session
