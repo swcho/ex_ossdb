@@ -223,5 +223,26 @@ declare module 'jugglingdb' {
          *
          */
         hasAndBelongsToMany();
+
+        /*
+         * Validation
+         */
+        // User.validatesPresenceOf('name', 'email')
+        validatesPresenceOf();
+        // User.validatesLengthOf('password', {min: 5, message: {min: 'Password is too short'}});
+        validatesLengthOf(name: string, param: any);
+        // User.validatesInclusionOf('gender', {in: ['male', 'female']});
+        validatesInclusionOf(name: string, param: any);
+        // User.validatesExclusionOf('domain', {in: ['www', 'billing', 'admin']});
+        validatesExclusionOf(name: string, param: any);
+        // User.validatesNumericalityOf('age', {int: true});
+        validatesNumericalityOf(name: string, param: any);
+        // User.validatesUniquenessOf('email', {message: 'email is not unique'});
+        validatesUniquenessOf(name: string, param: any);
+
+        /*
+         * prototype
+         */
+        prototype: any;
     }
 }

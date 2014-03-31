@@ -6,7 +6,7 @@
 import express = require('express');
 import path = require('path');
 import fs = require('fs');
-import mongoose = require('mongoose');
+//import mongoose = require('mongoose');
 
 import jugglingdb = require('jugglingdb');
 
@@ -21,7 +21,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 var config: any = require('./lib/config/config');
 
 // Connect to database
-var db = mongoose.connect(config.mongo.uri, config.mongo.options);
+//var db = mongoose.connect(config.mongo.uri, config.mongo.options);
 
 var jdb = new jugglingdb.Schema('sqlite3', {
     database: './ossdb.sqlite3',
@@ -41,10 +41,10 @@ fs.readdirSync(modelsPath).forEach(function (file) {
 });
 
 // Populate empty DB with sample data
-require('./lib/config/dummydata');
+require('./lib/config/dummydata2');
 
 // Passport Configuration
-var passport = require('./lib/config/passport');
+var passport = require('./lib/config/passport2');
 
 var app = express();
 

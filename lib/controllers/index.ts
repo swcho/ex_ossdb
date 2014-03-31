@@ -25,5 +25,6 @@ export function partials(req: express.Request, res: express.Response) {
  * Send our single page app
  */
 export function index(req: express.Request, res: express.Response) {
+    console.log('index');
     res.render('index');
 };

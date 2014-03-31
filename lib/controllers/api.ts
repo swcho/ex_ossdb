@@ -1,16 +1,17 @@
 /// <reference path="../../typings/node/node.d.ts" />
 /// <reference path="../../typings/mongoose/mongoose.d.ts" />
 
-import mongoose = require('mongoose');
-import thing = require('../models/thing');
+//import mongoose = require('mongoose');
+import thing2 = require('../models/thing2');
 
-var Thing = mongoose.model<thing.TThing>('Thing');
+//var Thing = mongoose.model<thing.TThing>('Thing');
 
 /**
  * Get awesome things
  */
 export function awesomeThings(req, res) {
-    return Thing.find(function (err, things) {
+    return thing2.Thing.all(function (err, things) {
+        console.log(things);
         if (!err) {
             return res.json(things);
         } else {
