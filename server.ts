@@ -30,6 +30,7 @@ var jdb = new jugglingdb.Schema('sqlite3', {
     debug: true
 });
 
+
 jdb['log'] = function (a) { console.log(a); };
 jugglingdb['db'] = jdb;
 
