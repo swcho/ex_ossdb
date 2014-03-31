@@ -280,6 +280,12 @@ export function get_license_all(aCb: (licenseList: any) => void) {
     });
 }
 
+export function set_license(aLicense: any, aCb: (license: any) => void) {
+    License.upsert(aLicense, (err, license) => {
+        aCb(license);
+    });
+}
+
 function populate_package(aPackage: TPackage, aCb) {
     Oss.find(aPackage.ossId, (err, oss) => {
         aPackage.oss = oss;
@@ -347,6 +353,12 @@ export function get_package_all(aCb: (package: any) => void, aDoNotPopulate?: bo
     });
 }
 
+export function set_package(aPackage: any, aCb: (p: any) => void) {
+    License.upsert(aPackage, (err, p) => {
+        aCb(p);
+    });
+}
+
 function populate_project(aProject: TProject, aCb) {
     aProject.getUsages((err, usages) => {
         var packages = [];
@@ -405,6 +417,12 @@ export function get_project_all(aCb: (projectList: any) => void) {
             cb();
         });
         async.series(s);
+    });
+}
+
+export function set_project(aProject: any, aCb: (p: any) => void) {
+    License.upsert(aProject, (err, p) => {
+        aCb(p);
     });
 }
 

@@ -29,11 +29,19 @@ module.exports = function(app) {
     app.post('/api/oss/:id', ossdb.set_oss);
 
     app.get('/api/license', ossdb.get_license);
+    app.post('/api/license/new', ossdb.set_license);
     app.get('/api/license/:id', ossdb.get_license);
+    app.post('/api/license/:id', ossdb.set_license);
+
     app.get('/api/package', ossdb.get_package);
+    app.post('/api/package/new', ossdb.set_package);
     app.get('/api/package/:id', ossdb.get_package);
+    app.post('/api/package/:id', ossdb.set_package);
+
     app.get('/api/project', ossdb.get_project);
+    app.post('/api/project/new', ossdb.set_project);
     app.get('/api/project/:id', ossdb.get_project);
+    app.post('/api/project/:id', ossdb.set_project);
 
     app.post('/api/SetProjectWithPackages', ossdb.SetProjectWithPackages);
 

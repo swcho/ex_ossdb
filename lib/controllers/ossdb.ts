@@ -48,6 +48,21 @@ export function get_license(req, res) {
     }
 }
 
+export function set_license(req, res) {
+    var id = req.params['id'];
+    var license = req.body;
+    if (id) {
+        license.id = id;
+        ossdb.set_license(license, (newLicense) => {
+            res.json(newLicense);
+        });
+    } else {
+        ossdb.set_license(license, (newLicense) => {
+            res.json(newLicense);
+        });
+    }
+}
+
 export function get_package(req, res) {
     var id = req.params['id'];
     if (id) {
@@ -61,6 +76,21 @@ export function get_package(req, res) {
     }
 }
 
+export function set_package(req, res) {
+    var id = req.params['id'];
+    var pkg = req.body;
+    if (id) {
+        pkg.id = id;
+        ossdb.set_license(pkg, (newPackage) => {
+            res.json(newPackage);
+        });
+    } else {
+        ossdb.set_license(pkg, (newPackage) => {
+            res.json(newPackage);
+        });
+    }
+}
+
 export function get_project(req, res) {
     var id = req.params['id'];
     if (id) {
@@ -70,6 +100,21 @@ export function get_project(req, res) {
     } else {
         ossdb.get_project_all((projectList) => {
             res.json(projectList);
+        });
+    }
+}
+
+export function set_project(req, res) {
+    var id = req.params['id'];
+    var project = req.body;
+    if (id) {
+        project.id = id;
+        ossdb.set_license(project, (newProject) => {
+            res.json(newProject);
+        });
+    } else {
+        ossdb.set_license(project, (newProject) => {
+            res.json(newProject);
         });
     }
 }
