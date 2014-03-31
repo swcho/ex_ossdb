@@ -3,11 +3,11 @@
 <div class="container">
     <div class="form-group">
         <label>Name</label>
-        <input type="text" id="name" class="form-control" ng-model="_name" ng-change="_checkChanged()">
+        <input type="text" class="form-control" ng-model="_name" ng-change="_checkChanged()">
     </div>
     <div class="form-group">
         <label>Type</label>
-        <input type="text" id="type" class="form-control" ng-model="_type" ng-change="_checkChanged()">
+        <input type="text" class="form-control" ng-model="_type" ng-change="_checkChanged()">
     </div>
     <div class="form-group sample-show-hide" ng-show="_changed">
         <button class="form-control btn btn-primary" ng-click="_doUpsert()">Save</button>

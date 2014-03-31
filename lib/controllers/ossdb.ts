@@ -77,15 +77,20 @@ export function get_package(req, res) {
 }
 
 export function set_package(req, res) {
+    console.log('set_package');
     var id = req.params['id'];
     var pkg = req.body;
+    console.log(id);
+    console.log(pkg);
     if (id) {
         pkg.id = id;
-        ossdb.set_license(pkg, (newPackage) => {
+        ossdb.set_package(pkg, (newPackage) => {
+            console.log(newPackage);
             res.json(newPackage);
         });
     } else {
-        ossdb.set_license(pkg, (newPackage) => {
+        ossdb.set_package(pkg, (newPackage) => {
+            console.log(newPackage);
             res.json(newPackage);
         });
     }
@@ -109,11 +114,11 @@ export function set_project(req, res) {
     var project = req.body;
     if (id) {
         project.id = id;
-        ossdb.set_license(project, (newProject) => {
+        ossdb.set_project(project, (newProject) => {
             res.json(newProject);
         });
     } else {
-        ossdb.set_license(project, (newProject) => {
+        ossdb.set_project(project, (newProject) => {
             res.json(newProject);
         });
     }

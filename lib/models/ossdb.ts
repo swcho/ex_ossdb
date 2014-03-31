@@ -354,7 +354,7 @@ export function get_package_all(aCb: (package: any) => void, aDoNotPopulate?: bo
 }
 
 export function set_package(aPackage: any, aCb: (p: any) => void) {
-    License.upsert(aPackage, (err, p) => {
+    Package.upsert(aPackage, (err, p) => {
         aCb(p);
     });
 }
@@ -421,7 +421,7 @@ export function get_project_all(aCb: (projectList: any) => void) {
 }
 
 export function set_project(aProject: any, aCb: (p: any) => void) {
-    License.upsert(aProject, (err, p) => {
+    Project.upsert(aProject, (err, p) => {
         aCb(p);
     });
 }
