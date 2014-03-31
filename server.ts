@@ -20,6 +20,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 // Application Config
 var config: any = require('./lib/config/config');
 
+
 // Connect to database
 //var db = mongoose.connect(config.mongo.uri, config.mongo.options);
 
