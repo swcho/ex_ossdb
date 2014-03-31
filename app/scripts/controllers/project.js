@@ -1,3 +1,4 @@
+/// <reference path="../../../typings/angularjs/angular.d.ts" />
 angular.module('meanTrialApp').controller('ProjectCtrl', function ($scope, $http) {
     $http.get('/api/project').success(function (projectList) {
         console.log(projectList);
@@ -12,4 +13,6 @@ angular.module('meanTrialApp').controller('ProjectCtrl', function ($scope, $http
             $scope._licenseList = licenseList;
         });
     });
+}).controller('ProjectNewCtrl', function ($scope, $http, $location) {
 });
+//# sourceMappingURL=project.js.map

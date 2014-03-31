@@ -17,4 +17,7 @@ angular.module('meanTrialApp')
                 $scope._licenseList = licenseList;
             });
         });
-    });
+    })
+    .controller('ProjectNewCtrl', function ($scope, $http, $location) {
+    })
+;

@@ -25,4 +25,7 @@ angular.module('meanTrialApp')
                 }
             });
         });
-    });
+    })
+    .controller('PackageNewCtrl', function ($scope, $http, $location) {
+    })
+;
