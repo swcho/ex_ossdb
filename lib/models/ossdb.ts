@@ -6,6 +6,7 @@
 
 import jugglingdb = require('jugglingdb');
 import async = require('async');
+import model = require('./model');
 
 var db: jugglingdb.Schema = jugglingdb['db'];
 console.log(process.cwd());
@@ -44,10 +45,28 @@ export interface TPackageUsage {
 
 }
 
-export var Oss: jugglingdb.Model<TOss> = db.define<TOss>('Oss', {
-    name: {type: String, index: true},
-    projectUrl: String
-});
+export class CModelOss extends model.CModel<TOss> {
+    constructor(aDb: jugglingdb.Schema) {
+        super(aDb, 'Oss', {
+            'name': {type: String, index: true},
+            'projectUrl': String
+        });
+    }
+    _populateItem(aItem: TOss, aCb: model.FCbWithItem<TOss>) {
+        aItem.getPackages((err, packages) => {
+            aItem.packages = packages;
+            aCb(err, aItem);
+        });
+    }
+}
+
+export var modelOss = new CModelOss(db);
+
+export var Oss: jugglingdb.Model<TOss> = modelOss.model();
+//export var Oss: jugglingdb.Model<TOss> = db.define<TOss>('Oss', {
+//    name: {type: String, index: true},
+//    projectUrl: String
+//});
 
 export var License: jugglingdb.Model<TLicense> = db.define<TLicense>('License', {
     name: {type: String, index: true},
@@ -75,6 +94,8 @@ Package.hasMany(PackageUsage, {as: 'getUsages', foreignKey: 'packageId'});
 //PackageUsage.belongsTo(Project);
 //PackageUsage.belongsTo(Package);
 
+
+
 export function set_fixture(done) {
 
     var fit_Oss: TOss[] = [{
@@ -87,6 +108,14 @@ export function set_fixture(done) {
         name: 'libzip',
         projectUrl: "http://www.nih.at/libzip/"
     }];
+
+    var i, len=20;
+    for (i=0; i<len; i++) {
+        fit_Oss.push({
+            name: 'Oss ' + i,
+            projectUrl: 'http://www.oss.com/' + i
+        });
+    }
 
     var fit_license: TLicense[] = [{
         name: 'GNU General Public License (GPLv2)',

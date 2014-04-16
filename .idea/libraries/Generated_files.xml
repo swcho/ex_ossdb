@@ -34,7 +34,7 @@
       <root url="file://$PROJECT_DIR$/lib/config/dummydata2.js" />
       <root url="file://$PROJECT_DIR$/lib/config/express.js" />
       <root url="file://$PROJECT_DIR$/lib/controllers/index.js" />
-      <root url="file://$PROJECT_DIR$/lib/controllers/ossdb.js" />
+      <root url="file://$PROJECT_DIR$/lib/controllers/route_ossdb.js" />
       <root url="file://$PROJECT_DIR$/lib/controllers/users2.js" />
       <root url="file://$PROJECT_DIR$/lib/models/thing2.js" />
       <root url="file://$PROJECT_DIR$/app/scripts/controllers/license.js" />

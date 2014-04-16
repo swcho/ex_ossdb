@@ -9,7 +9,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 var config = require('./lib/config/config');
 
 var jdb = new jugglingdb.Schema('sqlite3', {
-    database: './ossdb.sqlite3',
+    database: ':memory:',
     debug: true
 });
 

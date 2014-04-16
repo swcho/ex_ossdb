@@ -5,7 +5,8 @@ import index = require('./controllers/index');
 //import users = require('./controllers/users');
 import users2 = require('./controllers/users2');
 import session = require('./controllers/session');
-import ossdb = require('./controllers/ossdb');
+import route_ossdb = require('./controllers/route_ossdb');
+import ossdb = require('./models/ossdb')
 import middleware = require('./middleware');
 
 /**
@@ -23,27 +24,28 @@ module.exports = function(app) {
     app.post('/api/session', session.login);
     app.del('/api/session', session.logout);
 
-    app.get('/api/oss', ossdb.get_oss);
-    app.post('/api/oss/new', ossdb.set_oss);
-    app.get('/api/oss/:id', ossdb.get_oss);
-    app.post('/api/oss/:id', ossdb.set_oss);
+    ossdb.modelOss.setRoute(app);
+//    app.get('/api/oss', route_ossdb.get_oss);
+//    app.post('/api/oss/new', route_ossdb.set_oss);
+//    app.get('/api/oss/:id', route_ossdb.get_oss);
+//    app.post('/api/oss/:id', route_ossdb.set_oss);
 
-    app.get('/api/license', ossdb.get_license);
-    app.post('/api/license/new', ossdb.set_license);
-    app.get('/api/license/:id', ossdb.get_license);
-    app.post('/api/license/:id', ossdb.set_license);
+    app.get('/api/license', route_ossdb.get_license);
+    app.post('/api/license/new', route_ossdb.set_license);
+    app.get('/api/license/:id', route_ossdb.get_license);
+    app.post('/api/license/:id', route_ossdb.set_license);
 
-    app.get('/api/package', ossdb.get_package);
-    app.post('/api/package/new', ossdb.set_package);
-    app.get('/api/package/:id', ossdb.get_package);
-    app.post('/api/package/:id', ossdb.set_package);
+    app.get('/api/package', route_ossdb.get_package);
+    app.post('/api/package/new', route_ossdb.set_package);
+    app.get('/api/package/:id', route_ossdb.get_package);
+    app.post('/api/package/:id', route_ossdb.set_package);
 
-    app.get('/api/project', ossdb.get_project);
-    app.post('/api/project/new', ossdb.set_project);
-    app.get('/api/project/:id', ossdb.get_project);
-    app.post('/api/project/:id', ossdb.set_project);
+    app.get('/api/project', route_ossdb.get_project);
+    app.post('/api/project/new', route_ossdb.set_project);
+    app.get('/api/project/:id', route_ossdb.get_project);
+    app.post('/api/project/:id', route_ossdb.set_project);
 
-    app.post('/api/SetProjectWithPackages', ossdb.SetProjectWithPackages);
+    app.post('/api/SetProjectWithPackages', route_ossdb.SetProjectWithPackages);
 
     // All undefined api routes should return a 404
     app.get('/api/*', function(req, res) {

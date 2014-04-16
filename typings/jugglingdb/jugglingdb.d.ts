@@ -110,7 +110,7 @@ declare module 'jugglingdb' {
         /*
          * Update when record with id=data.id found, insert otherwise. Be aware: no setters, validations or hooks applied when use upsert. This is seed-friendly method.
          */
-        upsert(data: T, callback: (err, model: Model<T>) => void);
+        upsert(data: T, callback: (err, item: T) => void);
 
         /*
          * Delete database record. Invoke callback when ready. Callback accepts two arguments: error and model instance.

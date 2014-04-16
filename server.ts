@@ -25,8 +25,8 @@ var config: any = require('./lib/config/config');
 //var db = mongoose.connect(config.mongo.uri, config.mongo.options);
 
 var jdb = new jugglingdb.Schema('sqlite3', {
-    database: './ossdb.sqlite3',
-//    database: ':memory:',
+//    database: './ossdb.sqlite3',
+    database: ':memory:',
     debug: true
 });
 
