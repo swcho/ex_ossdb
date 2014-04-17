@@ -27,11 +27,13 @@ export interface TLicense {
 
 export interface TPackage {
     name: string;
-    getUsages?: Function;
+    getUsages?: (cb: (err, usages: TPackageUsage[]) => void) => void;
     projects?: TProject[];
     licenseId?: string;
     ossId?: string;
+    getLicense?: Function;
     license?: TLicense;
+    getOss?: Function;
     oss?: TOss;
 }
 
@@ -42,7 +44,12 @@ export interface TProject {
 }
 
 export interface TPackageUsage {
-
+    projectId: number;
+    packageId: number;
+    getPackage?: Function;
+    package?: TPackage;
+    getProject?: Function;
+    project?: TProject;
 }
 
 export class CModelOss extends model.CModel<TOss> {
@@ -60,7 +67,102 @@ export class CModelOss extends model.CModel<TOss> {
     }
 }
 
+export class CModelLicense extends model.CModel<TLicense> {
+    constructor(aDb: jugglingdb.Schema) {
+        super(aDb, 'License', {
+            name: {type: String, index: true},
+            type: String
+        });
+    }
+    _populateItem(aItem: TLicense, aCb: model.FCbWithItem<TLicense>) {
+        aItem.getPackages((err, packages) => {
+            aItem.packages = packages;
+            aCb(err, aItem);
+        });
+    }
+}
+
+export class CModelPackage extends model.CModel<TPackage> {
+    constructor(aDb: jugglingdb.Schema) {
+        super(aDb, 'Package', {
+            name: {type: String, index: true}
+        });
+    }
+    _populateItem(aItem: TPackage, aCb: model.FCbWithItem<TPackage>) {
+        aItem.getOss((err, oss) => {
+            aItem.oss = oss;
+            aItem.getLicense((err, license) => {
+                aItem.license = license;
+                aItem.getUsages((err, usages) => {
+                    var projects = [];
+                    var series = [];
+                    usages.forEach((usage) => {
+                        series.push((cb) => {
+                            usage.getProject((err, project) => {
+                                projects.push(project);
+                                cb();
+                            });
+                        });
+                    });
+                    series.push((cb) => {
+                        aItem.projects = projects;
+                        aCb(err, aItem);
+                        cb();
+                    });
+                    async.series(series);
+                });
+            });
+        });
+    }
+}
+
+export class CModelProject extends model.CModel<TProject> {
+    constructor(aDb: jugglingdb.Schema) {
+        super(aDb, 'Project', {
+            projectId: {type: String, index: true}
+        });
+    }
+    _populateItem(aItem: TProject, aCb: model.FCbWithItem<TProject>) {
+        aItem.getUsages((err, usages) => {
+            var packages = [];
+            var series = [];
+            usages.forEach((usage) => {
+                series.push((cb) => {
+                    usage.getPackage((err, package) => {
+                        packages.push(package);
+                        cb();
+                    });
+                });
+            });
+            series.push((cb) => {
+                aItem.packages = packages;
+                aCb(err, aItem);
+                cb();
+            });
+            async.series(series);
+        });
+    }
+    getByProjectId(aProjectId: string, aCb: model.FCbWithItem<TProject>) {
+        this.model().findOne({
+            where: {
+                projectId: aProjectId
+            }
+        }, (err, project) => {
+            if (project) {
+                this._populateItem(project, (err) => {
+                    aCb(err, project);
+                });
+            } else {
+                aCb(err, null);
+            }
+        });
+    }
+}
+
 export var modelOss = new CModelOss(db);
+export var modelLicense = new CModelLicense(db);
+export var modelPackage = new CModelPackage(db);
+export var modelProject = new CModelProject(db);
 
 export var Oss: jugglingdb.Model<TOss> = modelOss.model();
 //export var Oss: jugglingdb.Model<TOss> = db.define<TOss>('Oss', {
@@ -68,18 +170,21 @@ export var Oss: jugglingdb.Model<TOss> = modelOss.model();
 //    projectUrl: String
 //});
 
-export var License: jugglingdb.Model<TLicense> = db.define<TLicense>('License', {
-    name: {type: String, index: true},
-    type: String
-});
+export var License: jugglingdb.Model<TLicense> = modelLicense.model();
+//export var License: jugglingdb.Model<TLicense> = db.define<TLicense>('License', {
+//    name: {type: String, index: true},
+//    type: String
+//});
 
-export var Package: jugglingdb.Model<TPackage> = db.define<TPackage>('Package', {
-    name: {type: String, index: true}
-});
+export var Package: jugglingdb.Model<TPackage> = modelPackage.model();
+//export var Package: jugglingdb.Model<TPackage> = db.define<TPackage>('Package', {
+//    name: {type: String, index: true}
+//});
 
-export var Project: jugglingdb.Model<TProject> = db.define<TProject>('Project', {
-    projectId: {type: String, index: true}
-});
+export var Project: jugglingdb.Model<TProject> = modelProject.model();
+//export var Project: jugglingdb.Model<TProject> = db.define<TProject>('Project', {
+//    projectId: {type: String, index: true}
+//});
 
 export var PackageUsage: jugglingdb.Model<TPackageUsage> = db.define<TPackageUsage>('PackageUsage', {
 });
@@ -87,10 +192,16 @@ export var PackageUsage: jugglingdb.Model<TPackageUsage> = db.define<TPackageUsa
 //db.autoupdate();
 
 Oss.hasMany(Package, {as: 'getPackages', foreignKey: 'ossId'});
-//Oss.hasMany(Package);
+Package.belongsTo(Oss, {as: 'getOss', foreignKey: 'ossId'});
+
 License.hasMany(Package, {as: 'getPackages', foreignKey: 'licenseId'});
+Package.belongsTo(License, {as: 'getLicense', foreignKey: 'licenseId'});
+
 Project.hasMany(PackageUsage, {as: 'getUsages', foreignKey: 'projectId'});
+PackageUsage.belongsTo(Project, {as: 'getProject', foreignKey: 'projectId'});
+
 Package.hasMany(PackageUsage, {as: 'getUsages', foreignKey: 'packageId'});
+PackageUsage.belongsTo(Package, {as: 'getPackage', foreignKey: 'packageId'});
 //PackageUsage.belongsTo(Project);
 //PackageUsage.belongsTo(Package);
 
@@ -223,8 +334,8 @@ export function set_fixture(done) {
         var s = [];
         fit_relation_packageUsage.forEach((usage) => {
             var newUsage = PackageUsage.create({
-                'projectId': usage.projectId,
-                'packageId': usage.packageId
+                projectId: usage.projectId,
+                packageId: usage.packageId
             }, cb);
 //            newUsage.updateAttributes(, cb);
             //newUsage.save(cb);
@@ -247,6 +358,7 @@ export function set_fixture(done) {
     };
 }
 
+/*
 export function get_oss_by_id(aId, aCb: (oss: any) => void) {
     Oss.find(aId, (err, oss) => {
         oss.getPackages((err, packages) => {
@@ -280,7 +392,9 @@ export function set_oss(aOss: any, aCb: (oss: any) => void) {
         aCb(oss);
     });
 }
+*/
 
+/*
 export function get_license_by_id(aId, aCb: (license: any) => void) {
     License.find(aId, (err, license) => {
         license.getPackages((err, packages) => {
@@ -314,146 +428,147 @@ export function set_license(aLicense: any, aCb: (license: any) => void) {
         aCb(license);
     });
 }
+*/
 
-function populate_package(aPackage: TPackage, aCb) {
-    Oss.find(aPackage.ossId, (err, oss) => {
-        aPackage.oss = oss;
-        License.find(aPackage.licenseId, (err, license) => {
-            aPackage.license = license;
-            aPackage.getUsages((err, usages) => {
-                var projects = [];
-                var series = [];
-                usages.forEach((usage) => {
-                    series.push((cb) => {
-                        Project.find(usage.projectId, (err, project) => {
-                            console.log(project);
-                            projects.push(project);
-                            cb();
-                        });
-                    })
-                });
-                series.push((cb) => {
-                    aPackage.projects = projects;
-                    aCb();
-                    cb();
-                });
-                async.series(series);
-            });
-        })
-    });
-}
+//function populate_package(aPackage: TPackage, aCb) {
+//    Oss.find(aPackage.ossId, (err, oss) => {
+//        aPackage.oss = oss;
+//        License.find(aPackage.licenseId, (err, license) => {
+//            aPackage.license = license;
+//            aPackage.getUsages((err, usages) => {
+//                var projects = [];
+//                var series = [];
+//                usages.forEach((usage) => {
+//                    series.push((cb) => {
+//                        Project.find(usage.projectId, (err, project) => {
+//                            console.log(project);
+//                            projects.push(project);
+//                            cb();
+//                        });
+//                    })
+//                });
+//                series.push((cb) => {
+//                    aPackage.projects = projects;
+//                    aCb();
+//                    cb();
+//                });
+//                async.series(series);
+//            });
+//        })
+//    });
+//}
+//
+//export function get_package_by_id(aId, aCb: (package: any) => void) {
+//    Package.find(aId, (err, package) => {
+//        populate_package(package, () => {
+//            aCb(package);
+//        });
+//    })
+//}
+//
+//export function get_package_by_name(aName, aCb: (package: any) => void) {
+//    Package.findOne({
+//        where: {
+//            name: aName
+//        }
+//    }, (err, package) => {
+//        aCb(package);
+//    });
+//}
+//
+//export function get_package_all(aCb: (package: any) => void, aDoNotPopulate?: boolean) {
+//    Package.all((err, packageList) => {
+//        if (aDoNotPopulate) {
+//            aCb(packageList);
+//        } else {
+//            var s = [];
+//            packageList.forEach((package) => {
+//                s.push((cb) => {
+//                    populate_package(package, cb);
+//                });
+//            });
+//            s.push((cb) => {
+//                console.log(packageList);
+//                aCb(packageList);
+//                cb();
+//            });
+//            async.series(s);
+//        }
+//    });
+//}
+//
+//export function set_package(aPackage: any, aCb: (p: any) => void) {
+//    Package.upsert(aPackage, (err, p) => {
+//        aCb(p);
+//    });
+//}
 
-export function get_package_by_id(aId, aCb: (package: any) => void) {
-    Package.find(aId, (err, package) => {
-        populate_package(package, () => {
-            aCb(package);
-        });
-    })
-}
-
-export function get_package_by_name(aName, aCb: (package: any) => void) {
-    Package.findOne({
-        where: {
-            name: aName
-        }
-    }, (err, package) => {
-        aCb(package);
-    });
-}
-
-export function get_package_all(aCb: (package: any) => void, aDoNotPopulate?: boolean) {
-    Package.all((err, packageList) => {
-        if (aDoNotPopulate) {
-            aCb(packageList);
-        } else {
-            var s = [];
-            packageList.forEach((package) => {
-                s.push((cb) => {
-                    populate_package(package, cb);
-                });
-            });
-            s.push((cb) => {
-                console.log(packageList);
-                aCb(packageList);
-                cb();
-            });
-            async.series(s);
-        }
-    });
-}
-
-export function set_package(aPackage: any, aCb: (p: any) => void) {
-    Package.upsert(aPackage, (err, p) => {
-        aCb(p);
-    });
-}
-
-function populate_project(aProject: TProject, aCb) {
-    aProject.getUsages((err, usages) => {
-        var packages = [];
-        var series = [];
-        usages.forEach((usage) => {
-            series.push((cb) => {
-                Package.find(usage.packageId, (err, package) => {
-                    packages.push(package);
-                    cb();
-                });
-            });
-        });
-        series.push((cb2) => {
-            aProject.packages = packages;
-            aCb();
-            cb2();
-        });
-        async.series(series);
-    });
-}
-
-export function get_project_by_id(aId, aCb: (project: any) => void) {
-    Project.find(aId, (err, project) => {
-        populate_project(project, () => {
-            aCb(project);
-        });
-    });
-}
-
-export function get_project_by_projectId(aProjectId, aCb: (project: any) => void) {
-    Project.findOne({
-        where: {
-            projectId: aProjectId
-        }
-    }, (err, project) => {
-        if (project) {
-            populate_project(project, () => {
-                aCb(project);
-            });
-        } else {
-            aCb(null);
-        }
-    });
-}
-
-export function get_project_all(aCb: (projectList: any) => void) {
-    Project.all((err, projectList) => {
-        var s = [];
-        projectList.forEach((project) => {
-            s.push((cb) => {
-                populate_project(project, cb);
-            });
-        });
-        s.push((cb) => {
-            aCb(projectList);
-            cb();
-        });
-        async.series(s);
-    });
-}
-
-export function set_project(aProject: any, aCb: (p: any) => void) {
-    Project.upsert(aProject, (err, p) => {
-        aCb(p);
-    });
-}
+//function populate_project(aProject: TProject, aCb) {
+//    aProject.getUsages((err, usages) => {
+//        var packages = [];
+//        var series = [];
+//        usages.forEach((usage) => {
+//            series.push((cb) => {
+//                Package.find(usage.packageId, (err, package) => {
+//                    packages.push(package);
+//                    cb();
+//                });
+//            });
+//        });
+//        series.push((cb2) => {
+//            aProject.packages = packages;
+//            aCb();
+//            cb2();
+//        });
+//        async.series(series);
+//    });
+//}
+//
+//export function get_project_by_id(aId, aCb: (project: any) => void) {
+//    Project.find(aId, (err, project) => {
+//        populate_project(project, () => {
+//            aCb(project);
+//        });
+//    });
+//}
+//
+//export function get_project_by_projectId(aProjectId, aCb: (project: any) => void) {
+//    Project.findOne({
+//        where: {
+//            projectId: aProjectId
+//        }
+//    }, (err, project) => {
+//        if (project) {
+//            populate_project(project, () => {
+//                aCb(project);
+//            });
+//        } else {
+//            aCb(null);
+//        }
+//    });
+//}
+//
+//export function get_project_all(aCb: (projectList: any) => void) {
+//    Project.all((err, projectList) => {
+//        var s = [];
+//        projectList.forEach((project) => {
+//            s.push((cb) => {
+//                populate_project(project, cb);
+//            });
+//        });
+//        s.push((cb) => {
+//            aCb(projectList);
+//            cb();
+//        });
+//        async.series(s);
+//    });
+//}
+//
+//export function set_project(aProject: any, aCb: (p: any) => void) {
+//    Project.upsert(aProject, (err, p) => {
+//        aCb(p);
+//    });
+//}
 
 export interface TSetProjectWithPackagesParam {
     projectId: string;
@@ -486,7 +601,7 @@ export function SetProjectWithPackages(aParam: TSetProjectWithPackagesParam, aCb
 
     // get packages
     series.push((cb) => {
-        get_package_all((packageList) => {
+        modelPackage.getAll((err, packageList) => {
             packageList.forEach((p) => {
                 packagesByName[p.name] = p;
             });
@@ -496,7 +611,7 @@ export function SetProjectWithPackages(aParam: TSetProjectWithPackagesParam, aCb
 
     // get previous project item
     series.push((cb) => {
-        get_project_by_projectId(aParam.projectId, (p) => {
+        modelProject.getByProjectId(aParam.projectId, (err, p) => {
             project = p;
             console.log('get previous project item');
             console.log(p);
@@ -539,7 +654,7 @@ export function SetProjectWithPackages(aParam: TSetProjectWithPackagesParam, aCb
             resp.packageNamesCreated = newPackageNames;
 
             // update package list
-            get_package_all((packageList) => {
+            modelPackage.getAll((packageList) => {
                 packageList.forEach((p) => {
                     packagesByName[p.name] = p;
                 });

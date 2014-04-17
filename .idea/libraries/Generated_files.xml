@@ -13,8 +13,8 @@
         <item url="file://$PROJECT_DIR$/lib/config/dummydata2.js" />
         <item url="file://$PROJECT_DIR$/lib/controllers/index.js" />
         <item url="file://$PROJECT_DIR$/lib/config/express.js" />
+        <item url="file://$PROJECT_DIR$/lib/controllers/route_ossdb.js" />
         <item url="file://$PROJECT_DIR$/lib/controllers/users2.js" />
-        <item url="file://$PROJECT_DIR$/lib/controllers/ossdb.js" />
         <item url="file://$PROJECT_DIR$/app/scripts/controllers/license.js" />
         <item url="file://$PROJECT_DIR$/lib/models/thing2.js" />
         <item url="file://$PROJECT_DIR$/lib/models/user2.js" />
@@ -34,8 +34,8 @@
       <root url="file://$PROJECT_DIR$/lib/config/dummydata2.js" />
       <root url="file://$PROJECT_DIR$/lib/config/express.js" />
       <root url="file://$PROJECT_DIR$/lib/controllers/index.js" />
-      <root url="file://$PROJECT_DIR$/lib/controllers/route_ossdb.js" />
       <root url="file://$PROJECT_DIR$/lib/controllers/users2.js" />
+      <root url="file://$PROJECT_DIR$/lib/controllers/route_ossdb.js" />
       <root url="file://$PROJECT_DIR$/lib/models/thing2.js" />
       <root url="file://$PROJECT_DIR$/app/scripts/controllers/license.js" />
       <root url="file://$PROJECT_DIR$/lib/models/user2.js" />

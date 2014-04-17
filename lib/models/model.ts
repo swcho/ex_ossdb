@@ -88,16 +88,18 @@ export class CModel<T> {
             }
         });
     }
-    getAll(aCb: FCbWithItemList<T>) {
+    getAll(aCb: FCbWithItemList<T>, aDoNotPopulate: boolean = false) {
         this._model.all((err, itemList) => {
             var series = [];
-            itemList.forEach((item) => {
-                series.push((cb) => {
-                    this._populateItem(item, (err, populatedItem) => {
-                        cb();
+            if (!aDoNotPopulate) {
+                itemList.forEach((item) => {
+                    series.push((cb) => {
+                        this._populateItem(item, (err, populatedItem) => {
+                            cb();
+                        });
                     });
                 });
-            });
+            }
             series.push((cb) => {
                 aCb(err, itemList);
                 cb();

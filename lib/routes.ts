@@ -30,20 +30,23 @@ module.exports = function(app) {
 //    app.get('/api/oss/:id', route_ossdb.get_oss);
 //    app.post('/api/oss/:id', route_ossdb.set_oss);
 
-    app.get('/api/license', route_ossdb.get_license);
-    app.post('/api/license/new', route_ossdb.set_license);
-    app.get('/api/license/:id', route_ossdb.get_license);
-    app.post('/api/license/:id', route_ossdb.set_license);
+    ossdb.modelLicense.setRoute(app);
+//    app.get('/api/license', route_ossdb.get_license);
+//    app.post('/api/license/new', route_ossdb.set_license);
+//    app.get('/api/license/:id', route_ossdb.get_license);
+//    app.post('/api/license/:id', route_ossdb.set_license);
 
-    app.get('/api/package', route_ossdb.get_package);
-    app.post('/api/package/new', route_ossdb.set_package);
-    app.get('/api/package/:id', route_ossdb.get_package);
-    app.post('/api/package/:id', route_ossdb.set_package);
+    ossdb.modelPackage.setRoute(app);
+//    app.get('/api/package', route_ossdb.get_package);
+//    app.post('/api/package/new', route_ossdb.set_package);
+//    app.get('/api/package/:id', route_ossdb.get_package);
+//    app.post('/api/package/:id', route_ossdb.set_package);
 
-    app.get('/api/project', route_ossdb.get_project);
-    app.post('/api/project/new', route_ossdb.set_project);
-    app.get('/api/project/:id', route_ossdb.get_project);
-    app.post('/api/project/:id', route_ossdb.set_project);
+    ossdb.modelProject.setRoute(app);
+//    app.get('/api/project', route_ossdb.get_project);
+//    app.post('/api/project/new', route_ossdb.set_project);
+//    app.get('/api/project/:id', route_ossdb.get_project);
+//    app.post('/api/project/:id', route_ossdb.set_project);
 
     app.post('/api/SetProjectWithPackages', route_ossdb.SetProjectWithPackages);
 
