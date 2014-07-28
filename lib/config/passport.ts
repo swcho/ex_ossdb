@@ -1,13 +1,9 @@
 /// <reference path="../../typings/node/node.d.ts" />
-/// <reference path="../../typings/mongoose/mongoose.d.ts" />
 /// <reference path="../../typings/passportjs/passport.d.ts" />
 
-import mongoose = require('mongoose');
 import passport = require('passport');
 import user = require('../models/user')
 var LocalStrategy = require('passport-local').Strategy;
-
-var User = mongoose.model<user.TUser>('User');
 
 /**
  * Passport configuration
@@ -17,9 +13,7 @@ passport.serializeUser(function(user, done) {
 });
 
 passport.deserializeUser(function(id, done) {
-    User.findOne({
-        _id: id
-    }, '-salt -hashedPassword', function(err, user) { // don't ever give out the password or salt
+    user.User.find(id, function(err, user) { // don't ever give out the password or salt
         done(err, user);
     });
 });
@@ -30,8 +24,10 @@ passport.use(new LocalStrategy({
         passwordField: 'password' // this is the virtual field on the model
     },
     function(email, password, done) {
-        User.findOne({
-            email: email
+        user.User.findOne({
+            where: {
+                email: email
+            }
         }, function(err, user) {
             if (err) return done(err);
 

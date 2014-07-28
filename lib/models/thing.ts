@@ -1,20 +1,20 @@
 /// <reference path="../../typings/node/node.d.ts" />
-/// <reference path="../../typings/mongoose/mongoose.d.ts" />
+/// <reference path="../../typings/jugglingdb/jugglingdb.d.ts" />
 
-import mongoose = require('mongoose');
+import jugglingdb = require('jugglingdb');
 
-export interface TThing extends mongoose.Document {
+var db: jugglingdb.Schema = jugglingdb['db'];
+
+export interface TThing {
     name: string;
     info: string;
     awesomeness: number;
 }
 
-var Schema = mongoose.Schema;
-
 /**
  * Thing Schema
  */
-var ThingSchema = new Schema({
+export var Thing = db.define<TThing>('Thing', {
     name: String,
     info: String,
     awesomeness: Number
@@ -23,8 +23,8 @@ var ThingSchema = new Schema({
 /**
  * Validations
  */
-ThingSchema.path('awesomeness').validate(function (num) {
-    return num >= 1 && num <= 10;
-}, 'Awesomeness must be between 1 and 10');
+//ThingSchema.path('awesomeness').validate(function (num) {
+//    return num >= 1 && num <= 10;
+//}, 'Awesomeness must be between 1 and 10');
 
-mongoose.model<TThing>('Thing', ThingSchema);
+//mongoose.model<TThing>('Thing', ThingSchema);

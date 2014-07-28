@@ -25,9 +25,9 @@ fs.readdirSync(modelsPath).forEach(function (file) {
     }
 });
 
-require('./lib/config/dummydata2');
+require('./lib/config/dummydata');
 
-var passport = require('./lib/config/passport2');
+var passport = require('./lib/config/passport');
 
 var app = express();
 
