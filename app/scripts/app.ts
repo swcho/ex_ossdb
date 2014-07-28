@@ -31,62 +31,62 @@ angular.module('meanTrialApp', [
             })
             .when('/oss', {
                 templateUrl: 'partials/oss',
-                controller: 'OssCtrl',
+                controller: 'OssCtrl'
 //                authenticate: true
             })
             .when('/oss/new', {
                 templateUrl: 'partials/oss_detail',
-                controller: 'OssNewCtrl',
+                controller: 'OssNewCtrl'
 //                authenticate: true
             })
             .when('/oss/:id', {
                 templateUrl: 'partials/oss_detail',
-                controller: 'OssDetailCtrl',
+                controller: 'OssDetailCtrl'
 //                authenticate: true
             })
             .when('/license', {
                 templateUrl: 'partials/license',
-                controller: 'LicenseCtrl',
+                controller: 'LicenseCtrl'
 //                authenticate: true
             })
             .when('/license/new', {
                 templateUrl: 'partials/license_detail',
-                controller: 'LicenseNewCtrl',
+                controller: 'LicenseNewCtrl'
 //                authenticate: true
             })
             .when('/license/:id', {
                 templateUrl: 'partials/license_detail',
-                controller: 'LicenseDetailCtrl',
+                controller: 'LicenseDetailCtrl'
 //                authenticate: true
             })
             .when('/package', {
                 templateUrl: 'partials/package',
-                controller: 'PackageCtrl',
+                controller: 'PackageCtrl'
 //                authenticate: true
             })
             .when('/package/new', {
                 templateUrl: 'partials/package_detail',
-                controller: 'PackageNewCtrl',
+                controller: 'PackageNewCtrl'
 //                authenticate: true
             })
             .when('/package/:id', {
                 templateUrl: 'partials/package_detail',
-                controller: 'PackageDetailCtrl',
+                controller: 'PackageDetailCtrl'
 //                authenticate: true
             })
             .when('/project', {
                 templateUrl: 'partials/project',
-                controller: 'ProjectCtrl',
+                controller: 'ProjectCtrl'
 //                authenticate: true
             })
             .when('/project/new', {
                 templateUrl: 'partials/project_detail',
-                controller: 'ProjectNewCtrl',
+                controller: 'ProjectNewCtrl'
 //                authenticate: true
             })
             .when('/project/:id', {
                 templateUrl: 'partials/project_detail',
-                controller: 'ProjectDetailCtrl',
+                controller: 'ProjectDetailCtrl'
 //                authenticate: true
             })
             .otherwise({

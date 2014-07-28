@@ -1,3 +1,4 @@
+/// <reference path="../../typings/angularjs/angular.d.ts" />
 angular.module('meanTrialApp', [
     'ngCookies',
     'ngResource',
@@ -62,6 +63,7 @@ angular.module('meanTrialApp', [
 
     $locationProvider.html5Mode(true);
 
+    // Intercept 401s and redirect you to login
     $httpProvider.interceptors.push([
         '$q', '$location', function ($q, $location) {
             return {
@@ -76,9 +78,11 @@ angular.module('meanTrialApp', [
             };
         }]);
 }).run(function ($rootScope, $location, Auth) {
+    // Redirect to login if route requires auth and you're not logged in
     $rootScope.$on('$routeChangeStart', function (event, next) {
         if (next.authenticate && !Auth.isLoggedIn()) {
             $location.path('/login');
         }
     });
 });
+//# sourceMappingURL=app.js.map

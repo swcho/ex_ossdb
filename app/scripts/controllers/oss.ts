@@ -3,9 +3,23 @@
 
 angular.module('meanTrialApp')
     .controller('OssCtrl', function ($scope, $http) {
-        $http.get('/api/oss').success(function(ossList) {
-            console.log(ossList);
-            $scope.ossList = ossList;
+        $http.get('/api/oss?page=2').success(function(resp) {
+            console.log(resp);
+            $scope.ossList = resp.itemList;
+
+            $scope.setPage = function (pageNo) {
+                $scope.currentPage = pageNo;
+            };
+            $scope.pageChanged = function() {
+                console.log('Page changed to: ' + $scope.currentPage);
+            };
+
+            $scope.totlaItems = resp.totalCount;
+            $scope.currentPage = resp.page;
+            $scope.maxSize = 10;
+            $scope.bigTotalItems = resp.totalCount;
+            $scope.bigCurrentPage = 1;
+
         });
     })
     .controller('OssDetailCtrl', function ($scope, $http, $routeParams, $location) {

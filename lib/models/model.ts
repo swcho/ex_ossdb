@@ -50,8 +50,21 @@ export class CModel<T> {
     setRoute(aApp: express.Application) {
         var prefix = '/api/' + this._name.toLowerCase();
         aApp.get(prefix, (req: express.Request, res: express.Response) => {
-            this.getAll((err, itemList) => {
-                res.json(itemList);
+            var page = parseInt(req.param('page'), 10) || 1;
+            var limit = parseInt(req.param('limit'), 10) || 10;
+            console.log('page ' + page);
+
+            this.count((err, count) => {
+                this.getAll({
+                    limit: limit,
+                    offset: (page - 1) * limit
+                }, (err, itemList) => {
+                    res.json({
+                        itemList: itemList,
+                        page: page,
+                        totalCount: count
+                    });
+                });
             });
         });
         aApp.post(prefix + '/new', (req: express.Request, res: express.Response) => {
@@ -88,8 +101,11 @@ export class CModel<T> {
             }
         });
     }
-    getAll(aCb: FCbWithItemList<T>, aDoNotPopulate: boolean = false) {
-        this._model.all((err, itemList) => {
+    count(aCb: (err, count) => void) {
+        this._model.count(aCb);
+    }
+    getAll(aParam: any, aCb: FCbWithItemList<T>, aDoNotPopulate: boolean = false) {
+        this._model.all(aParam, (err, itemList) => {
             var series = [];
             if (!aDoNotPopulate) {
                 itemList.forEach((item) => {
@@ -100,6 +116,7 @@ export class CModel<T> {
                     });
                 });
             }
+
             series.push((cb) => {
                 aCb(err, itemList);
                 cb();
