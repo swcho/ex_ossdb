@@ -1,21 +1,26 @@
 angular.module('meanTrialApp').controller('OssCtrl', function ($scope, $http) {
-    $http.get('/api/oss?page=2').success(function (resp) {
-        console.log(resp);
-        $scope.ossList = resp.itemList;
+    $scope.setPage = function (pageNo) {
+        console.log('setPage: ' + $scope.currentPage);
+        $scope.currentPage = pageNo;
+    };
 
-        $scope.setPage = function (pageNo) {
-            $scope.currentPage = pageNo;
-        };
-        $scope.pageChanged = function () {
-            console.log('Page changed to: ' + $scope.currentPage);
-        };
+    $scope.pageChanged = function (page) {
+        console.log('pageChanged : ' + page);
+        console.log('pageChanged : ' + $scope.currentPage);
+        getPage($scope.currentPage);
+    };
 
-        $scope.totlaItems = resp.totalCount;
-        $scope.currentPage = resp.page;
-        $scope.maxSize = 10;
-        $scope.bigTotalItems = resp.totalCount;
-        $scope.bigCurrentPage = 1;
-    });
+    function getPage(aPageNo) {
+        $http.get('/api/oss?page=' + aPageNo).success(function (resp) {
+            console.log(resp);
+            $scope.ossList = resp.itemList;
+
+            $scope.totalItems = resp.totalCount;
+            $scope.currentPage = resp.page;
+        });
+    }
+
+    getPage(1);
 }).controller('OssDetailCtrl', function ($scope, $http, $routeParams, $location) {
     $scope._changed = false;
     $scope._gridOptions = {
