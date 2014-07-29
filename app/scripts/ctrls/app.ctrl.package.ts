@@ -2,12 +2,26 @@
 /// <reference path="../../../typings/angularjs/angular.d.ts" />
 
 angular.module('meanTrialApp')
+
     .controller('PackageCtrl', function ($scope, $http) {
-        $http.get('/api/package').success(function(packageList) {
-            console.log(packageList);
-            $scope.packageList = packageList;
-        });
+        $scope.pageChanged = function(page) {
+            console.log('pageChanged : ' + $scope.currentPage);
+            getPage($scope.currentPage);
+        };
+
+        function getPage(aPageNo) {
+            $http.get('/api/package?page=' + aPageNo).success(function(resp) {
+                console.log(resp);
+                $scope.packageList = resp.itemList;
+
+                $scope.totalItems = resp.totalCount;
+                $scope.currentPage = resp.page;
+            });
+        }
+
+        getPage(1);
     })
+
     .controller('PackageDetailCtrl', function ($scope, $http, $routeParams, $location) {
         $http.get('/api/package/' + $routeParams.id).success(function(pkg) {
             $http.get('/api/oss').success(function(ossList) {

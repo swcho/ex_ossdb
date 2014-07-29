@@ -2,12 +2,26 @@
 /// <reference path="../../../typings/angularjs/angular.d.ts" />
 
 angular.module('meanTrialApp')
+
     .controller('ProjectCtrl', function ($scope, $http) {
-        $http.get('/api/project').success(function(projectList) {
-            console.log(projectList);
-            $scope.projectList = projectList;
-        });
+        $scope.pageChanged = function(page) {
+            console.log('pageChanged : ' + $scope.currentPage);
+            getPage($scope.currentPage);
+        };
+
+        function getPage(aPageNo) {
+            $http.get('/api/project?page=' + aPageNo).success(function(resp) {
+                console.log(resp);
+                $scope.projectList = resp.itemList;
+
+                $scope.totalItems = resp.totalCount;
+                $scope.currentPage = resp.page;
+            });
+        }
+
+        getPage(1);
     })
+
     .controller('ProjectDetailCtrl', function ($scope, $http, $routeParams) {
         $http.get('/api/project/' + $routeParams.id).success(function(project) {
             console.log(project);
