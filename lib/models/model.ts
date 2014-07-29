@@ -106,10 +106,10 @@ export class CModel<T> {
     }
     getAll(aParam: any, aCb: FCbWithItemList<T>, aDoNotPopulate: boolean = false) {
         this._model.all(aParam, (err, itemList) => {
-            var series = [];
+            var steps = [];
             if (!aDoNotPopulate) {
                 itemList.forEach((item) => {
-                    series.push((cb) => {
+                    steps.push((cb) => {
                         this._populateItem(item, (err, populatedItem) => {
                             cb();
                         });
@@ -117,11 +117,12 @@ export class CModel<T> {
                 });
             }
 
-            series.push((cb) => {
-                aCb(err, itemList);
+            steps.push((cb) => {
                 cb();
             });
-            async.series(series);
+            async.series(steps, () => {
+                aCb(err, itemList);
+            });
         });
     }
     getByUniqueId(aUniqueId: string, aCb: FCbWithItem<T>) {

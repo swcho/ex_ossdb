@@ -358,218 +358,6 @@ export function set_fixture(done) {
     };
 }
 
-/*
-export function get_oss_by_id(aId, aCb: (oss: any) => void) {
-    Oss.find(aId, (err, oss) => {
-        oss.getPackages((err, packages) => {
-            oss.packages = packages;
-            aCb(oss);
-        });
-    });
-}
-
-export function get_oss_all(aCb: (ossList: any) => void) {
-    Oss.all((err, ossList) => {
-        var s = [];
-        ossList.forEach((oss) => {
-            s.push((cb) => {
-                oss.getPackages((err, packages) => {
-                    oss.packages = packages;
-                    cb();
-                });
-            });
-        });
-        s.push((cb) => {
-            aCb(ossList);
-            cb();
-        });
-        async.series(s);
-    });
-}
-
-export function set_oss(aOss: any, aCb: (oss: any) => void) {
-    Oss.upsert(aOss, (err, oss) => {
-        aCb(oss);
-    });
-}
-*/
-
-/*
-export function get_license_by_id(aId, aCb: (license: any) => void) {
-    License.find(aId, (err, license) => {
-        license.getPackages((err, packages) => {
-            license.packages = packages;
-            aCb(license);
-        });
-    });
-}
-
-export function get_license_all(aCb: (licenseList: any) => void) {
-    License.all((err, licenseList) => {
-        var s = [];
-        licenseList.forEach((license) => {
-            s.push((cb) => {
-                license.getPackages((err, packages) => {
-                    license.packages = packages;
-                    cb();
-                });
-            });
-        });
-        s.push((cb) => {
-            aCb(licenseList);
-            cb();
-        });
-        async.series(s);
-    });
-}
-
-export function set_license(aLicense: any, aCb: (license: any) => void) {
-    License.upsert(aLicense, (err, license) => {
-        aCb(license);
-    });
-}
-*/
-
-//function populate_package(aPackage: TPackage, aCb) {
-//    Oss.find(aPackage.ossId, (err, oss) => {
-//        aPackage.oss = oss;
-//        License.find(aPackage.licenseId, (err, license) => {
-//            aPackage.license = license;
-//            aPackage.getUsages((err, usages) => {
-//                var projects = [];
-//                var series = [];
-//                usages.forEach((usage) => {
-//                    series.push((cb) => {
-//                        Project.find(usage.projectId, (err, project) => {
-//                            console.log(project);
-//                            projects.push(project);
-//                            cb();
-//                        });
-//                    })
-//                });
-//                series.push((cb) => {
-//                    aPackage.projects = projects;
-//                    aCb();
-//                    cb();
-//                });
-//                async.series(series);
-//            });
-//        })
-//    });
-//}
-//
-//export function get_package_by_id(aId, aCb: (package: any) => void) {
-//    Package.find(aId, (err, package) => {
-//        populate_package(package, () => {
-//            aCb(package);
-//        });
-//    })
-//}
-//
-//export function get_package_by_name(aName, aCb: (package: any) => void) {
-//    Package.findOne({
-//        where: {
-//            name: aName
-//        }
-//    }, (err, package) => {
-//        aCb(package);
-//    });
-//}
-//
-//export function get_package_all(aCb: (package: any) => void, aDoNotPopulate?: boolean) {
-//    Package.all((err, packageList) => {
-//        if (aDoNotPopulate) {
-//            aCb(packageList);
-//        } else {
-//            var s = [];
-//            packageList.forEach((package) => {
-//                s.push((cb) => {
-//                    populate_package(package, cb);
-//                });
-//            });
-//            s.push((cb) => {
-//                console.log(packageList);
-//                aCb(packageList);
-//                cb();
-//            });
-//            async.series(s);
-//        }
-//    });
-//}
-//
-//export function set_package(aPackage: any, aCb: (p: any) => void) {
-//    Package.upsert(aPackage, (err, p) => {
-//        aCb(p);
-//    });
-//}
-
-//function populate_project(aProject: TProject, aCb) {
-//    aProject.getUsages((err, usages) => {
-//        var packages = [];
-//        var series = [];
-//        usages.forEach((usage) => {
-//            series.push((cb) => {
-//                Package.find(usage.packageId, (err, package) => {
-//                    packages.push(package);
-//                    cb();
-//                });
-//            });
-//        });
-//        series.push((cb2) => {
-//            aProject.packages = packages;
-//            aCb();
-//            cb2();
-//        });
-//        async.series(series);
-//    });
-//}
-//
-//export function get_project_by_id(aId, aCb: (project: any) => void) {
-//    Project.find(aId, (err, project) => {
-//        populate_project(project, () => {
-//            aCb(project);
-//        });
-//    });
-//}
-//
-//export function get_project_by_projectId(aProjectId, aCb: (project: any) => void) {
-//    Project.findOne({
-//        where: {
-//            projectId: aProjectId
-//        }
-//    }, (err, project) => {
-//        if (project) {
-//            populate_project(project, () => {
-//                aCb(project);
-//            });
-//        } else {
-//            aCb(null);
-//        }
-//    });
-//}
-//
-//export function get_project_all(aCb: (projectList: any) => void) {
-//    Project.all((err, projectList) => {
-//        var s = [];
-//        projectList.forEach((project) => {
-//            s.push((cb) => {
-//                populate_project(project, cb);
-//            });
-//        });
-//        s.push((cb) => {
-//            aCb(projectList);
-//            cb();
-//        });
-//        async.series(s);
-//    });
-//}
-//
-//export function set_project(aProject: any, aCb: (p: any) => void) {
-//    Project.upsert(aProject, (err, p) => {
-//        aCb(p);
-//    });
-//}
-
 export interface TSetProjectWithPackagesParam {
     projectId: string;
     packageNames: string[];
@@ -601,19 +389,23 @@ export function SetProjectWithPackages(aParam: TSetProjectWithPackagesParam, aCb
 
     // get packages
     series.push((cb) => {
-        modelPackage.getAll((err, packageList) => {
-            packageList.forEach((p) => {
-                packagesByName[p.name] = p;
-            });
+        console.log('get packages');
+        modelPackage.getAll({}, (err, packageList) => {
+            if (packageList) {
+                packageList.forEach((p) => {
+                    packagesByName[p.name] = p;
+                });
+                console.log('packages count = ' + packageList.length);
+            }
             cb();
         }, true);
     });
 
     // get previous project item
     series.push((cb) => {
+        console.log('get previous project item');
         modelProject.getByProjectId(aParam.projectId, (err, p) => {
             project = p;
-            console.log('get previous project item');
             console.log(p);
             cb();
         });
@@ -649,15 +441,19 @@ export function SetProjectWithPackages(aParam: TSetProjectWithPackagesParam, aCb
                 newPackageNames.push(name);
             }
         });
+        console.log('new packages to add: ' + newPackageNames.join(','));
         Package.create(newPackages, (err) => {
             console.log('set packages');
             resp.packageNamesCreated = newPackageNames;
 
             // update package list
-            modelPackage.getAll((packageList) => {
-                packageList.forEach((p) => {
-                    packagesByName[p.name] = p;
-                });
+            modelPackage.getAll({}, (err, packageList) => {
+                if (packageList) {
+                    console.log('update package list with count ' + packageList.length);
+                    packageList.forEach((p) => {
+                        packagesByName[p.name] = p;
+                    });
+                }
                 cb();
             }, true);
         });
@@ -733,8 +529,11 @@ export function SetProjectWithPackages(aParam: TSetProjectWithPackagesParam, aCb
                 cb();
             }
         } else {
+            console.log('update packages to project');
+            console.log(JSON.stringify(packagesByName, null, 2));
             var usages = [];
             aParam.packageNames.forEach((name) => {
+                console.log(name);
                 usages.push({
                     projectId: newProject.id,
                     packageId: packagesByName[name].id
