@@ -2,12 +2,27 @@
 /// <reference path="../../../typings/angularjs/angular.d.ts" />
 
 angular.module('meanTrialApp')
+
     .controller('LicenseCtrl', function ($scope, $http) {
-        $http.get('/api/license').success(function(licenseList) {
-            console.log(licenseList);
-            $scope.licenseList = licenseList;
-        });
+
+        $scope.pageChanged = function(page) {
+            console.log('pageChanged : ' + $scope.currentPage);
+            getPage($scope.currentPage);
+        };
+
+        function getPage(aPageNo) {
+            $http.get('/api/license?page=' + aPageNo).success(function(resp) {
+                console.log(resp);
+                $scope.licenseList = resp.itemList;
+
+                $scope.totalItems = resp.totalCount;
+                $scope.currentPage = resp.page;
+            });
+        }
+
+        getPage(1);
     })
+
     .controller('LicenseDetailCtrl', function ($scope, $http, $routeParams, $location) {
         $scope._changed = false;
         $http.get('/api/license/' + $routeParams.id).success(function(license) {

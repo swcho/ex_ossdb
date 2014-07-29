@@ -4,13 +4,7 @@
 angular.module('meanTrialApp')
     .controller('OssCtrl', function ($scope, $http) {
 
-        $scope.setPage = function (pageNo) {
-            console.log('setPage: ' + $scope.currentPage);
-            $scope.currentPage = pageNo;
-        };
-
         $scope.pageChanged = function(page) {
-            console.log('pageChanged : ' + page);
             console.log('pageChanged : ' + $scope.currentPage);
             getPage($scope.currentPage);
         };
