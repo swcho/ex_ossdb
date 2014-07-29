@@ -6,8 +6,13 @@ declare module 'jugglingdb' {
         port?: string; // Database port
         username?: string; // Username to connect to database
         password?: string; // Password to connect to database
-        database: string; // Database name
+        database?: string; // Database name
         debug?: boolean; // Turn on verbose mode to debug db queries and lifecycle
+
+        // for MongoDB
+        url?: string;
+        w?: number;
+        j?: number;
     }
 
     // ref: http://jugglingdb.co/schema.3.html

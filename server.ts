@@ -21,17 +21,24 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 var config: any = require('./lib/config/config');
 
 
-// Connect to database
-//var db = mongoose.connect(config.mongo.uri, config.mongo.options);
+if( process.env.NODE_ENV == 'production' ) {
 
-var jdb = new jugglingdb.Schema('sqlite3', {
+    var jdb = new jugglingdb.Schema('mongodb', {
+        url: 'mongodb://localhost/ossdb',
+        w: 1,
+        j: 1
+    });
+    jdb['log'] = function (a) { console.log(a); };
+
+} else {
+
+    var jdb = new jugglingdb.Schema('sqlite3', {
 //    database: './ossdb.sqlite3',
-    database: ':memory:',
-    debug: true
-});
+        database: ':memory:',
+        debug: true
+    });
+}
 
-
-jdb['log'] = function (a) { console.log(a); };
 jugglingdb['db'] = jdb;
 
 // Bootstrap models
@@ -42,8 +49,10 @@ fs.readdirSync(modelsPath).forEach(function (file) {
     }
 });
 
-// Populate empty DB with sample data
-require('./lib/config/dummydata');
+if( process.env.NODE_ENV == 'development' ) {
+    // Populate empty DB with sample data
+    require('./lib/config/dummydata');
+}
 
 // Passport Configuration
 var passport = require('./lib/config/passport');
