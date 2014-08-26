@@ -27,6 +27,7 @@ export interface TLicense {
 
 export interface TPackage {
     name: string;
+    type: string;
     getUsages?: (cb: (err, usages: TPackageUsage[]) => void) => void;
     projects?: TProject[];
     licenseId?: string;
@@ -85,7 +86,8 @@ export class CModelLicense extends model.CModel<TLicense> {
 export class CModelPackage extends model.CModel<TPackage> {
     constructor(aDb: jugglingdb.Schema) {
         super(aDb, 'Package', {
-            name: {type: String, index: true}
+            name: {type: String, index: true},
+            type: String
         }, 'name');
     }
     _populateItem(aItem: TPackage, aCb: model.FCbWithItem<TPackage>) {
@@ -187,6 +189,8 @@ export var Project: jugglingdb.Model<TProject> = modelProject.model();
 //});
 
 export var PackageUsage: jugglingdb.Model<TPackageUsage> = db.define<TPackageUsage>('PackageUsage', {
+    projectId: {type: String, index: true},
+    packageId: {type: String, index: true}
 });
 
 //db.autoupdate();
@@ -209,6 +213,9 @@ PackageUsage.belongsTo(Package, {as: 'getPackage', foreignKey: 'packageId'});
 
 export function set_fixture(done) {
 
+    db.automigrate(done);
+    return;
+
     var i, iLen, j, jLen;
 
     var fit_Oss: TOss[] = [];
@@ -226,7 +233,8 @@ export function set_fixture(done) {
         });
         for (j=0; j<jLen; j++) {
             fit_package.push({
-                name: oss_name + '.' + j + '.so'
+                name: oss_name + '.' + j + '.so',
+                type: 'lib'
             });
             fit_relation_package.push({
                 ossId: i + 1,
@@ -344,9 +352,14 @@ export function set_fixture(done) {
     };
 }
 
+export interface TPackageInfo {
+    name: string;
+    type: string;
+}
+
 export interface TSetProjectWithPackagesParam {
     projectId: string;
-    packageNames: string[];
+    packageInfoList: TPackageInfo[];
 }
 
 export interface TSetProjectWithPackagesResp {
@@ -359,6 +372,7 @@ export interface TSetProjectWithPackagesResp {
 }
 
 export function SetProjectWithPackages(aParam: TSetProjectWithPackagesParam, aCb: (aResp: TSetProjectWithPackagesResp) => void) {
+    console.log(JSON.stringify(aParam));
     var packagesByName = {};
     var project;
     var newProject;
@@ -414,21 +428,23 @@ export function SetProjectWithPackages(aParam: TSetProjectWithPackagesParam, aCb
         }
     });
 
+    var newPackages: TPackageInfo[] = [];
     // set packages
     series.push((cb) => {
-        var newPackages: TPackage[] = [];
         var newPackageNames: string[] = [];
         var packageNames = Object.keys(packagesByName);
-        aParam.packageNames.forEach((name) => {
-            if (packageNames.indexOf(name) == -1) {
+        aParam.packageInfoList.forEach((info) => {
+            if (packageNames.indexOf(info.name) == -1 && newPackageNames.indexOf(info.name) == -1) {
                 newPackages.push({
-                    name: name
+                    name: info.name,
+                    type: info.type
                 });
-                newPackageNames.push(name);
+                newPackageNames.push(info.name);
             }
         });
         console.log('new packages to add: ' + newPackageNames.join(','));
         Package.create(newPackages, (err) => {
+            console.log(err);
             console.log('set packages');
             resp.packageNamesCreated = newPackageNames;
 
@@ -459,19 +475,19 @@ export function SetProjectWithPackages(aParam: TSetProjectWithPackagesParam, aCb
 
                 var usagesToBeAdded = [];
                 var requestedPackageNames = [];
-                aParam.packageNames.forEach((name) => {
+                aParam.packageInfoList.forEach((info) => {
                     usagesToBeAdded.push({
                         projectId: project.id,
-                        packageId: packagesByName[name].id
+                        packageId: packagesByName[info.name].id
                     });
-                    if (packageNames.indexOf(name) == -1) {
+                    if (packageNames.indexOf(info.name) == -1) {
 //                        usagesToBeAdded.push({
 //                            projectId: newProject.id,
 //                            packageId: packagesByName[name].id
 //                        });
-                        resp.packageNamesAdded.push(name);
+                        resp.packageNamesAdded.push(info.name);
                     }
-                    requestedPackageNames.push(name);
+                    requestedPackageNames.push(info.name);
                 });
 
 //                var usagesToBeRemoved = [];
@@ -518,13 +534,13 @@ export function SetProjectWithPackages(aParam: TSetProjectWithPackagesParam, aCb
             console.log('update packages to project');
             console.log(JSON.stringify(packagesByName, null, 2));
             var usages = [];
-            aParam.packageNames.forEach((name) => {
-                console.log(name);
+            newPackages.forEach((info) => {
+                console.log(info.name);
                 usages.push({
                     projectId: newProject.id,
-                    packageId: packagesByName[name].id
+                    packageId: packagesByName[info.name].id
                 });
-                resp.packageNamesAdded.push(name);
+                resp.packageNamesAdded.push(info.name);
             });
             PackageUsage.create(usages, (err, usages) => {
                 console.log('Usages');
