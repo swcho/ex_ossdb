@@ -23,6 +23,6 @@
     </table>
 </div>
 <div class="row">
-    <pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+    <pagination total-items="totalItems" ng-model="currentPage" max-size="10" ng-change="pageChanged()"></pagination>
 </div>
 <div ng-include="'partials/footer'"></div>
