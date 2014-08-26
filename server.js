@@ -41,6 +41,8 @@ var passport = require('./lib/config/passport');
 
 var app = express();
 
+express.Application;
+
 require('./lib/config/express')(app);
 
 require('./lib/routes')(app);

@@ -59,6 +59,8 @@ var passport = require('./lib/config/passport');
 
 var app = express();
 
+express.Application
+
 // Express settings
 require('./lib/config/express')(app);
 

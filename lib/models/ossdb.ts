@@ -57,7 +57,7 @@ export class CModelOss extends model.CModel<TOss> {
         super(aDb, 'Oss', {
             'name': {type: String, index: true},
             'projectUrl': String
-        });
+        }, 'name');
     }
     _populateItem(aItem: TOss, aCb: model.FCbWithItem<TOss>) {
         aItem.getPackages((err, packages) => {
@@ -72,7 +72,7 @@ export class CModelLicense extends model.CModel<TLicense> {
         super(aDb, 'License', {
             name: {type: String, index: true},
             type: String
-        });
+        }, 'name');
     }
     _populateItem(aItem: TLicense, aCb: model.FCbWithItem<TLicense>) {
         aItem.getPackages((err, packages) => {
@@ -86,7 +86,7 @@ export class CModelPackage extends model.CModel<TPackage> {
     constructor(aDb: jugglingdb.Schema) {
         super(aDb, 'Package', {
             name: {type: String, index: true}
-        });
+        }, 'name');
     }
     _populateItem(aItem: TPackage, aCb: model.FCbWithItem<TPackage>) {
         aItem.getOss((err, oss) => {
@@ -120,7 +120,7 @@ export class CModelProject extends model.CModel<TProject> {
     constructor(aDb: jugglingdb.Schema) {
         super(aDb, 'Project', {
             projectId: {type: String, index: true}
-        });
+        }, 'projectId');
     }
     _populateItem(aItem: TProject, aCb: model.FCbWithItem<TProject>) {
         aItem.getUsages((err, usages) => {
@@ -209,62 +209,48 @@ PackageUsage.belongsTo(Package, {as: 'getPackage', foreignKey: 'packageId'});
 
 export function set_fixture(done) {
 
-    var fit_Oss: TOss[] = [{
-        name: 'OpenSSL',
-        projectUrl: "http://www.openssl.org/"
-    }, {
-        name: 'libpng',
-        projectUrl: "http://www.libpng.org/pub/png/libpng.html"
-    }, {
-        name: 'libzip',
-        projectUrl: "http://www.nih.at/libzip/"
-    }];
+    var i, iLen, j, jLen;
 
-    var i, len=20;
-    for (i=0; i<len; i++) {
+    var fit_Oss: TOss[] = [];
+    var fit_package: TPackage[] = [];
+    var fit_relation_package = [];
+
+    iLen=20;
+    jLen=20;
+    var oss_name;
+    for (i=0; i<iLen; i++) {
+        oss_name = 'Oss_' + i;
         fit_Oss.push({
-            name: 'Oss ' + i,
+            name: oss_name,
             projectUrl: 'http://www.oss.com/' + i
+        });
+        for (j=0; j<jLen; j++) {
+            fit_package.push({
+                name: oss_name + '.' + j + '.so'
+            });
+            fit_relation_package.push({
+                ossId: i + 1,
+                licenseId: j +1
+            });
+        }
+    }
+
+    var fit_license: TLicense[] = [];
+    iLen=20;
+    for (i=0; i<iLen; i++) {
+        fit_license.push({
+            name: 'License ' + i,
+            type: 'Type ' + i
         });
     }
 
-    var fit_license: TLicense[] = [{
-        name: 'GNU General Public License (GPLv2)',
-        type: 'Reciprocal'
-    }, {
-        name: 'GNU Library or Lesser General Public License (LGPLv2)',
-        type: 'Reciprocal'
-    }];
-
-    var fit_package: TPackage[] = [{
-        name: 'libopenssl.1.0.0.so'
-    }, {
-        name: 'libopenssl.1.0.1.so'
-    }, {
-        name: 'libopenssl.1.0.2.so'
-    }, {
-        name: 'libpng.1.0.1.so'
-    }];
-
-    var fit_project: TProject[] = [{
-        projectId: 'project_acme'
-    }, {
-        projectId: 'project_andromeda'
-    }];
-
-    var fit_relation_package = [{
-        ossId: 1,
-        licenseId: 2
-    }, {
-        ossId: 1,
-        licenseId: 2
-    }, {
-        ossId: 1,
-        licenseId: 1
-    }, {
-        ossId: 2,
-        licenseId: 1
-    }];
+    var fit_project: TProject[] = [];
+    iLen=20;
+    for (i=0; i<iLen; i++) {
+        fit_project.push({
+            projectId: 'Project ' + i
+        });
+    }
 
     var fit_relation_packageUsage = [{
         projectId: 1,

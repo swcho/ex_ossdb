@@ -7,21 +7,21 @@
         <item url="file://$PROJECT_DIR$/lib/models/model.js" />
         <item url="file://$PROJECT_DIR$/lib/models/ossdb.js" />
         <item url="file://$PROJECT_DIR$/lib/config/express.js" />
-        <item url="file://$PROJECT_DIR$/app/scripts/ctrls/app.ctrl.oss.js" />
-        <item url="file://$PROJECT_DIR$/lib/config/passport.js" />
         <item url="file://$PROJECT_DIR$/lib/config/dummydata.js" />
+        <item url="file://$PROJECT_DIR$/lib/config/passport.js" />
+        <item url="file://$PROJECT_DIR$/app/scripts/ctrls/app.ctrl.oss.js" />
         <item url="file://$PROJECT_DIR$/lib/models/thing.js" />
         <item url="file://$PROJECT_DIR$/app/scripts/ctrls/app.ctrl.project.js" />
         <item url="file://$PROJECT_DIR$/lib/controllers/api.js" />
         <item url="file://$PROJECT_DIR$/app/scripts/ctrls/app.ctrl.package.js" />
         <item url="file://$PROJECT_DIR$/lib/controllers/index.js" />
-        <item url="file://$PROJECT_DIR$/app/scripts/ctrls/package.js" />
         <item url="file://$PROJECT_DIR$/lib/controllers/users.js" />
+        <item url="file://$PROJECT_DIR$/app/scripts/ctrls/package.js" />
         <item url="file://$PROJECT_DIR$/app/scripts/ctrls/app.ctrl.license.js" />
         <item url="file://$PROJECT_DIR$/app/scripts/app.js" />
         <item url="file://$PROJECT_DIR$/server.js" />
-        <item url="file://$PROJECT_DIR$/lib/routes.js" />
         <item url="file://$PROJECT_DIR$/lib/controllers/route_ossdb.js" />
+        <item url="file://$PROJECT_DIR$/lib/routes.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
@@ -40,21 +40,21 @@
       <root url="file://$PROJECT_DIR$/lib/models/model.js" />
       <root url="file://$PROJECT_DIR$/lib/models/ossdb.js" />
       <root url="file://$PROJECT_DIR$/lib/config/express.js" />
-      <root url="file://$PROJECT_DIR$/lib/config/dummydata.js" />
-      <root url="file://$PROJECT_DIR$/lib/config/passport.js" />
       <root url="file://$PROJECT_DIR$/app/scripts/ctrls/app.ctrl.oss.js" />
+      <root url="file://$PROJECT_DIR$/lib/config/passport.js" />
+      <root url="file://$PROJECT_DIR$/lib/config/dummydata.js" />
       <root url="file://$PROJECT_DIR$/lib/models/thing.js" />
       <root url="file://$PROJECT_DIR$/app/scripts/ctrls/app.ctrl.project.js" />
       <root url="file://$PROJECT_DIR$/lib/controllers/api.js" />
       <root url="file://$PROJECT_DIR$/app/scripts/ctrls/app.ctrl.package.js" />
       <root url="file://$PROJECT_DIR$/lib/controllers/index.js" />
-      <root url="file://$PROJECT_DIR$/lib/controllers/users.js" />
       <root url="file://$PROJECT_DIR$/app/scripts/ctrls/package.js" />
+      <root url="file://$PROJECT_DIR$/lib/controllers/users.js" />
       <root url="file://$PROJECT_DIR$/app/scripts/ctrls/app.ctrl.license.js" />
       <root url="file://$PROJECT_DIR$/app/scripts/app.js" />
       <root url="file://$PROJECT_DIR$/server.js" />
-      <root url="file://$PROJECT_DIR$/lib/controllers/route_ossdb.js" />
       <root url="file://$PROJECT_DIR$/lib/routes.js" />
+      <root url="file://$PROJECT_DIR$/lib/controllers/route_ossdb.js" />
     </CLASSES>
     <SOURCES />
   </library>

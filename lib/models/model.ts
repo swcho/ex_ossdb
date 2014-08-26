@@ -37,12 +37,14 @@ export class CModel<T> {
     private _schema: TSchema;
     private _model: jugglingdb.Model<T>;
     private _uniqueIdKey: string;
+    private _defaultOrder: string;
 
-    constructor(aDb: jugglingdb.Schema, aName: string, aSchema: TSchema) {
+    constructor(aDb: jugglingdb.Schema, aName: string, aSchema: TSchema, aDefaultOrder: string) {
         this._db = aDb;
         this._name = aName;
         this._schema = aSchema;
         this._model = aDb.define<T>(aName, aSchema);
+        this._defaultOrder = aDefaultOrder;
     }
     model(): jugglingdb.Model<T> {
         return this._model;
@@ -105,6 +107,9 @@ export class CModel<T> {
         this._model.count(aCb);
     }
     getAll(aParam: any, aCb: FCbWithItemList<T>, aDoNotPopulate: boolean = false) {
+        if (!aParam.order) {
+            aParam.order = this._defaultOrder;
+        }
         this._model.all(aParam, (err, itemList) => {
             var steps = [];
             if (!aDoNotPopulate) {
